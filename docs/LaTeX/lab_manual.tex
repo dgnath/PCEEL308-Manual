@@ -1,0 +1,199 @@
+\documentclass[11pt,a4paper]{report}
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[american]{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes,arrows.meta,calc}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usepackage{geometry}
+\geometry{a4paper,margin=2.5cm}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{import}
+\usepackage{subcaption}
+% ============================================================
+% PAGE STYLE
+% ============================================================
+\pgfplotsset{compat=1.17}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Analog Electronics Lab (PCEEL308)}
+%\fancyhead[R]{\small \leftmark}
+\fancyfoot[L]{Department of Electrical \& Electronics Engineering | GEC Barton Hill}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\Large}
+  {\chaptertitlename\ \thechapter}{10pt}{\Huge}
+\titleformat{\section}{\normalfont\bfseries\large}{\thesection}{1em}{}
+
+% ============================================================
+% CUSTOM BOXES
+% ============================================================
+\newtcolorbox{safetybox}[1][]{
+  colback=red!5!white,
+  colframe=red!60!black,
+  fonttitle=\bfseries,
+  title=\ding{43}\ Safety Note,
+  breakable,#1
+}
+\newtcolorbox{aimbox}[1][]{
+  colback=blue!4!white,
+  colframe=blue!40!black,
+  fonttitle=\bfseries,
+  title=Aim,
+  breakable,#1
+}
+\newtcolorbox{prelabbox}[1][]{
+  colback=yellow!8!white,
+  colframe=yellow!50!black,
+  fonttitle=\bfseries,
+  title=Pre-Lab Assignment,
+  breakable,#1
+}
+\newtcolorbox{precautionbox}[1][]{
+  colback=orange!6!white,
+  colframe=orange!70!black,
+  fonttitle=\bfseries,
+  title=Precautions,
+  breakable,#1
+}
+\newtcolorbox{notebox}[1][]{
+	colback=green!6!white,
+	colframe=green!70!black,
+	fonttitle=\bfseries,
+	title=Explore further,
+	breakable,#1
+}
+% Placeholder for figures -- replace \fig{caption}{label}{width} with actual
+% \includegraphics or circuitikz code as the manual is developed.
+\newcommand{\figplaceholder}[3][0.6\textwidth]{%
+  \begin{figure}[H]
+    \centering
+    \fbox{\parbox[c][4cm][c]{#1}{\centering \textit{Figure Placeholder:}\\ #2}}
+    \caption{#2}
+    \label{#3}
+  \end{figure}
+}
+
+% Placeholder for observation tables
+\newcommand{\tableplaceholder}[2]{%
+  \begin{table}[H]
+    \centering
+    \caption{#1}
+    \label{#2}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{cccc}
+      \toprule
+      \textbf{Sl. No.} & & & \\
+      \midrule
+       & & & \\ 
+       & & & \\ 
+       & & & \\ 
+      \bottomrule
+    \end{tabular}
+  \end{table}
+}
+
+\newcommand{\circuitplaceholder}[2][0.7\textwidth]{%
+  \begin{figure}[H]
+    \centering
+    \fbox{\parbox[c][4.5cm][c]{#1}{\centering \textit{Circuit Diagram Placeholder}\\ #2}}
+    \caption{#2}
+  \end{figure}
+}
+
+\title{\textbf{Laboratory Manual}\\[0.3cm]\Large Analog Electronics Lab}
+\author{Dr. Dinesh Gopinath}
+\date{}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+\begin{document}
+%\maketitle
+% ---------------- TITLE PAGE ----------------
+\begin{titlepage}
+\centering
+\vspace*{1cm}
+{\Large \textbf{Government Engineering College Barton Hill}}\\[0.2cm]
+{\large DEPARTMENT OF ELECTRICAL AND ELECTRONICS ENGINEERING}\\[1.5cm]
+
+\rule{\linewidth}{0.5mm}\\[0.4cm]
+{\Huge \bfseries Analog Electronics Lab}\\[0.3cm]
+{\Large Laboratory Manual}\\[0.4cm]
+{\large Prepared by: Dr. Dinesh Gopinath}\\[0.3 cm]
+{Version:2; 2026}
+\rule{\linewidth}{0.5mm}\\[1.5cm]
+%\author{Dr. Dinesh Gopinath}
+\begin{tabular}{ll}
+\textbf{Course Code} & PCEEL308 \\
+\textbf{Semester} & S3 \\
+\textbf{Credits} & 2 \\
+\textbf{Teaching Hours (L:T:P:R)} & 0:0:3:0 \\
+\textbf{CIE Marks} & 50 \\
+\textbf{ESE Marks} & 50 \\
+\textbf{Exam Duration} & 2 Hrs.\ 30 Min. \\
+\textbf{Prerequisites} & Nil \\
+\textbf{Corequisites} & PBEET304\\
+\end{tabular}
+
+\vfill
+
+%\begin{tabular}{ll}
+%\textbf{Name of Student} & \rule{6cm}{0.4pt} \\[0.4cm]
+%\textbf{Register Number} & \rule{6cm}{0.4pt} \\[0.4cm]
+%\textbf{Batch / Section} & \rule{6cm}{0.4pt} \\[0.4cm]
+%\textbf{Academic Year} & \rule{6cm}{0.4pt} \\
+%\end{tabular}
+
+\vspace{1cm}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+% ============================================================
+\input{preface}
+% ============================================================
+\input{courseinfo}
+% ============================================================
+\input{general_instr}
+
+% ============================================================
+\input{safety}
+
+% ============================================================
+\input{equipment}
+% ============================================================
+\input{list_exp}
+% ============================================================
+% EXPERIMENT CHAPTERS WILL BE INSERTED HERE, ONE AT A TIME.
+% ============================================================
+%\input{./experiments/prelab1.tex}
+%\input{./experiments/prelab2.tex}
+%\input{./experiments/expt1.tex}
+\input{./experiments/expt2.tex}
+\end{document}

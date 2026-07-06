@@ -1,0 +1,26 @@
+\chapter*{Safety Guidelines}
+\addcontentsline{toc}{chapter}{Safety Guidelines}
+\begin{safetybox}
+	\begin{enumerate}[label=\arabic*.]
+		\item Always verify the power supply voltage and polarity before connecting it to the circuit. Reversed polarity can permanently damage diodes, transistors, op-amps, and ICs.
+		\item Switch off the power supply before making, modifying, or removing any circuit connections.
+		\item Do not exceed the maximum voltage, current, or power ratings of any active or passive component. Always compute and verify current-limiting resistor values before energising a circuit.
+		\item Use current-limiting resistors in series with LEDs, diodes, and Zener diodes during testing to prevent excessive current flow.
+		\item Avoid short-circuiting the output terminals of a regulated DC power supply or the output of an operational amplifier.
+		\item Handle CRO/DSO probes with care; ensure the ground (common) lead of the probe is connected to the circuit ground/common point to avoid ground loops and inaccurate measurements.
+		\item Be aware of the heat-sink and case temperature of power transistors and voltage regulators during prolonged operation; avoid direct contact.
+		\item Electrolytic capacitors are polarised. Verify polarity before connecting; reversed polarity may cause the capacitor to overheat, vent, or rupture.
+		\item Do not work on live circuits with wet hands or in a wet environment.
+		\item In the event of a component overheating, emitting smoke, or unusual odour, immediately switch off the power supply and inform the laboratory instructor before attempting further investigation.
+		\item Familiarise yourself with the location of the mains isolation switch and the fire extinguisher in the laboratory.
+	\end{enumerate}
+\end{safetybox}
+
+\begin{precautionbox}
+	\begin{enumerate}[label=\arabic*.]
+		\item Identify the pin configuration (pinout) of every IC and transistor from its datasheet before inserting it into the breadboard.
+		\item Avoid loose or floating connections, particularly at the input terminals of operational amplifiers, since floating CMOS/op-amp inputs may result in unpredictable circuit behaviour.
+		\item Keep signal leads and connecting wires as short as practicable to minimise stray capacitance and inductance, particularly in high-frequency oscillator circuits.
+		\item Re-verify all connections against the circuit diagram before switching on the power supply, and recheck after every modification.
+	\end{enumerate}
+\end{precautionbox}

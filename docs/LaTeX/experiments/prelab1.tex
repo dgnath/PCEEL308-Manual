@@ -1,0 +1,185 @@
+% =============================================================
+% Pre-Lab 1
+% Measurement of Voltage, Frequency, and Phase Shift of a Signal
+% in an RC Network using a DSO and Function Generator
+%
+% Required packages in the master document preamble:
+%   amsmath, amssymb, graphicx, circuitikz, booktabs,
+%   enumitem, siunitx, hyperref
+% =============================================================
+%\chapter*{Pre-lab 1\\Familiarisation of Digital~Storage~Oscilloscope and Function Generator}
+\chapter*{Pre-Lab 1\\Measurement of Voltage, Frequency and Phase Shift in an RC Network using a Digital Storage Oscilloscope}
+\label{sec:prelab1}
+\addcontentsline{toc}{chapter}{Pre-lab 1}
+
+\section*{Objectives}
+\begin{enumerate}[label=(\roman*)]
+	\item To become familiar with the front-panel controls of a basic (20--50\,MHz) Digital Storage Oscilloscope (DSO) and a function generator.
+	\item To measure the amplitude (peak, peak-to-peak, and RMS voltage) and frequency of a sinusoidal signal using the DSO.
+	\item To study the response of a simple series \emph{RC} network to a sinusoidal input.
+	\item To measure the phase shift introduced by the \emph{RC} network between the input and output voltages, using both the \textbf{time-difference method} and the \textbf{Lissajous (X--Y) method}.
+	\item To compare the experimentally measured phase shift and gain with the theoretically predicted values.
+\end{enumerate}
+
+\section*{Pre-Lab Theory}
+
+\subsection*{The Series \emph{RC} Network}
+
+Consider the series \emph{RC} circuit shown in Figure~\ref{fig:rc_circuit}, driven by a sinusoidal source $v_{in}(t) = V_m \sin(\omega t)$, where the output is taken across the capacitor. This simple linear, passive, circuit has several practical applications. This circuit is often called an \emph{integrator} or a \emph{low-pass filter}. The circuit when given a sinusoidal signal input, outputs a sinusoidal signal, but with different amplitude and phase, depending on the values of R and C.
+
+\begin{figure}[h!]
+	\centering
+	\begin{circuitikz}[american, scale=1.1]
+		\draw
+		(0,0) to[sinusoidal voltage source, l=$v_{in}(t)$] (0,3)
+		(0,3) to[short] (1,3)
+		(1,3) to[R, l=$R$, *-*] (3,3)
+		(3,3) to[C, l=$C$, *-*] (3,0)
+		(3,0) to[short] (0,0)
+		;
+		\draw (1,3) to[short, -o] (1,3.7) node[above]{CH1 ($v_{in}$)};
+		\draw (0,0) to[short, -o] (1,0);
+		\draw (3,3) to[short, -o] (3.7,3) node[right]{CH2 ($v_{out}$)};
+	\end{circuitikz}
+	\caption{Series \emph{RC} low-pass network. CH1 of the DSO monitors the source voltage $v_{in}(t)$ and CH2 monitors the voltage across the capacitor $v_{out}(t)$. Both channels share a common ground, which is same as the reference ground of the source.}
+	\label{fig:rc_circuit}
+\end{figure}
+
+The transfer function\footnote{The idea of transfer function is introduced in the course Circuits and Networks. In simple terms, it is the ratio of output to input} of this network is
+\begin{equation}
+	H(j\omega) = \frac{V_{out}}{V_{in}} = \frac{1/j\omega C}{R + 1/j\omega C} = \frac{1}{1 + j\omega RC}.
+	\label{eq:transfer_function}
+\end{equation}
+
+It may be noted that this can be obtained by sinusoidal analysis of the network considering R and C as impedances, and using voltage-divider formula.\footnote{$V_{Z_2}=V_{in}\frac{Z_2}{Z_1+Z_2}$}
+Defining the \emph{cutoff (corner) frequency}
+\begin{equation}
+	f_c = \frac{1}{2\pi RC}\,,
+	\label{eq:fc}
+\end{equation}
+the magnitude and phase of $H(j\omega)$ are
+\begin{align}
+	|H(j\omega)| &= \frac{1}{\sqrt{1 + (f/f_c)^2}}\,, \label{eq:mag}\\
+	\phi(f) &= -\tan^{-1}\!\left(\frac{f}{f_c}\right)\,. \label{eq:phase}
+\end{align}
+
+The cut-off frequency $f_c$ is an important parameter that decides the operating characteristics of this circuit. The circuit behaves differently to signals with frequencies above and below $f_c$. 
+ 
+Equation~\eqref{eq:mag} shows that the network attenuates the input as frequency increases (a low-pass filter), while Equation~\eqref{eq:phase} shows that $v_{out}(t)$ \emph{lags} $v_{in}(t)$ by an angle $\phi$ that increases from $0^\circ$ (at $f \ll f_c$) to $90^\circ$ (at $f \gg f_c$), with $\phi = -45^\circ$ exactly at $f = f_c$.
+
+\section*{Measurement Procedure}
+
+The circuit is set-up on a bread-board. The input voltage  $v_{in}(t)$ is given from a \textbf{Function Generator}. The control knobs in the front-panel of the function generator can set the amplitude, function (sine, triangle, rectangular, square waveforms), frequency, and DC offset. Before applying the input to the circuit, observe the waveform on a Digital Storage Oscilloscope (DSO) to ensure that the input signal is as per the requirements (amplitude, form, frequency and offset).
+
+\subsubsection*{Relating Time Delay to Phase Shift}
+
+On a DSO, phase shift is most directly obtained from the time delay $\Delta t$ between corresponding zero crossings of $v_{in}(t)$ and $v_{out}(t)$, together with the period $T$ of the waveform:
+\begin{equation}
+	\phi (\text{in degrees}) = \frac{\Delta t}{T}\times 360^\circ \;=\; \Delta t \, f \times 360^\circ.
+	\label{eq:phase_from_time}
+\end{equation}
+
+See the figure:
+\begin{figure}[!ht]
+	\def\svgwidth{0.8\textwidth}
+	\import{experiments/figures/}{PL1-VoltageMeas.pdf_tex}
+	\caption{Input and output waveforms and salient parameters}
+\end{figure}
+
+Care must be taken to note \emph{which} channel leads and which lags, since Equation~\eqref{eq:phase_from_time} gives only the magnitude of $\phi$ unless signs are tracked from the oscilloscope trace.
+
+\subsubsection{The Lissajous Method}
+
+If the DSO is operated in X--Y mode (CH1 on the horizontal axis, CH2 on the vertical axis), two sinusoids of the same frequency but different phase produce an elliptical trace (a \emph{Lissajous figure})\footnote{You may explore \href{https://c00lnerd.com/simulations/lissajous-explorer}{this online} simulation to learn more about Lissajous patterns.}. See figure~\ref{fig:lissajous}. $Y_0$ is the distance between the y-intercepts and $Y_m$ is the distance between the extreme vertical points. The phase shift is then given by:
+\begin{equation}
+	\phi = \sin^{-1}\!\left(\frac{Y_0}{Y_m}\right).
+	\label{eq:lissajous}
+\end{equation}
+This method is a useful independent cross-check of the time-difference method and is more accurate near $\phi = 90^\circ$, where $\Delta t$ becomes difficult to resolve on the time-domain trace.
+\begin{figure}
+	\def\svgwidth{0.5\textwidth}
+	\import{experiments/figures/}{Lissajous.pdf_tex}
+	\caption{Lissajous pattern and phase-shift calculation}
+	\label{fig:lissajous}
+\end{figure}
+\begin{notebox}
+	Modern DSOs have advanced measurement features that enable direct reading of the phase difference between two waveforms on screen, using cursor measurements. For more details, consult the operating manual of the DSO model. 
+\end{notebox}
+
+\subsection*{Apparatus Required}
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{@{}cll@{}}
+		\toprule
+		S.No. & Equipment & Specification \\
+		\midrule
+		1 & Digital Storage Oscilloscope & 2-channel, 20--50\,MHz bandwidth \\
+		2 & Function Generator & Sine wave, 1\,Hz -- 1\,MHz \\
+		3 & Resistor & 1 (value assigned in lab, e.g. 1\,k$\Omega$) \\
+		4 & Capacitor & 1 (value assigned in lab, e.g. 0.1\,$\mu$F) \\
+		5 & Breadboard and connecting wires & -- \\
+		6 & BNC--BNC and BNC--crocodile probes & As required \\
+		\bottomrule
+	\end{tabular}
+	\caption{Equipment list.}
+\end{table}
+
+\subsection*{Pre-Lab Preparation (to be completed \emph{before} coming to the laboratory)}
+
+Given the values of $R$ and $C$ assigned to your batch:
+
+\begin{enumerate}[label=(\alph*)]
+	\item Calculate the cutoff frequency $f_c$ using Equation~\eqref{eq:fc}.
+	\item Using Equations~\eqref{eq:mag} and~\eqref{eq:phase}, complete the theoretical prediction table below for input amplitude $V_m = 1\,\text{V}$ (peak), at frequencies referenced to $f_c$.
+	\item Sketch, on graph paper, the expected shape of the Lissajous figure at $f = 0.1f_c$, $f = f_c$, and $f = 10f_c$.
+\end{enumerate}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{@{}cccccc@{}}
+		\toprule
+		$f$ & $f/f_c$ & $|H(j\omega)|$ & $V_{out,pp}$ (theory) & $\phi$ (theory, deg) & $\Delta t$ (theory) \\
+		\midrule
+		$0.1 f_c$   & 0.1 &  &  &  &  \\
+		$0.5 f_c$   & 0.5 &  &  &  &  \\
+		$f_c$       & 1   &  &  &  &  \\
+		$2 f_c$     & 2   &  &  &  &  \\
+		$10 f_c$    & 10  &  &  &  &  \\
+		\bottomrule
+	\end{tabular}
+	\caption{Theoretical prediction table (to be filled in during pre-lab preparation).}
+	\label{tab:theory}
+\end{table}
+
+\section*{Experimental Procedure (Overview)}
+
+\begin{enumerate}[label=\arabic*.]
+	\item Connect the series \emph{RC} network as shown in Figure~\ref{fig:rc_circuit}. Set the function generator to produce a sine wave of the specified amplitude and set its frequency to $0.1 f_c$. Make sure that the output has no DC offset, i.e., the output is a pure ac sine wave. 
+	\item Connect DSO CH1 across the function generator output ($v_{in}$) and CH2 across the capacitor ($v_{out}$), ensuring a \emph{common ground} between the generator, the circuit, and both probes.
+	\item Use \textsc{Autoset} (or manual Volts/Div and Time/Div adjustment) to display 2--3 complete cycles of both waveforms on screen.
+	\item Using the DSO's horizontal cursors, measure the peak-to-peak voltage $V_{in,pp}$ and $V_{out,pp}$ for each channel.
+	\item Using the vertical (time) cursors, measure the period $T$ of the waveform and hence the frequency $f = 1/T$; cross-check against the function generator's dial/display setting.
+	\item Using the time cursors, measure the time delay $\Delta t$ between corresponding zero crossings of $v_{in}$ and $v_{out}$ and calculate $\phi$ from Equation~\eqref{eq:phase_from_time}.
+	\item Switch the DSO to \textbf{X--Y mode} and record the resulting Lissajous figure. Measure $Y_0$ and $Y_m$ and calculate $\phi$ from Equation~\eqref{eq:lissajous}.
+	\item Repeat Steps 4--7 for each frequency listed in Table~\ref{tab:theory} (and any additional frequencies specified by the instructor).
+	\item Tabulate all measured quantities alongside the theoretical predictions and calculate the percentage deviation.
+\end{enumerate}
+
+\subsection*{Precautions}
+\begin{itemize}
+	\item Ensure the ground leads of the function generator and both oscilloscope probes are connected to a common reference node to avoid ground-loop errors.
+	\item Compensate the oscilloscope probes (using the built-in calibration signal) before taking measurements. You may use the probe calibration facility of the DSO.
+	\item Keep the function generator output amplitude constant while varying frequency; check it does not change due to output loading. \footnote{Loading happens when the Circuit Under Test (CUT) has low input impedance compared to the function generator's output impedance.} 
+	\item Use the $\times 1$ or $\times 10$ probe setting consistently and account for the attenuation factor in the DSO's channel settings.
+\end{itemize}
+\section*{Practical Observations}
+Append the table~\ref{tab:theory} with additional columns of practical observations. Provide your inferences and conclusions/results.
+\subsection*{Pre-Lab Questions}
+\begin{enumerate}[label=Q\arabic*.]
+	\item Derive Equation~\eqref{eq:transfer_function} from first principles using the voltage divider rule in the phasor domain.
+	\item Show that at $f = f_c$, the output amplitude is $1/\sqrt{2}$ times the input amplitude and the phase shift is exactly $-45^\circ$.
+	\item If the output were taken across $R$ instead of $C$, what type of filter results? Derive the new expressions for $|H(j\omega)|$ and $\phi(f)$.
+	%\item A DSO has a maximum sample rate of $S$ samples/second. What is the minimum sample rate required to accurately capture a $50$\,kHz sine wave without aliasing? Relate this to the Nyquist criterion.
+	\item Why is the Lissajous method more reliable than the time-delay method for measuring phase shifts close to $90^\circ$?
+	\item List two sources of error in measuring $\Delta t$ directly from the DSO screen and suggest how each may be minimized.
+\end{enumerate}

@@ -1,0 +1,75 @@
+% =============================================================
+% Pre-Lab 2
+% Introduction to Circuit Simulation using LTspice
+%
+% Required packages in the master document preamble:
+%   amsmath, amssymb, graphicx, enumitem, hyperref
+% =============================================================
+
+\chapter*{Pre-Lab 2: Introduction to Circuit Simulation using LTspice}
+\label{chap:prelab2}
+\addcontentsline{toc}{chapter}{Pre-lab 2}
+\section*{Objectives}
+\begin{enumerate}[label=(\roman*)]
+	\item To install and set up LTspice, a free SPICE-based analogue circuit simulator.
+	\item To become familiar with the basic workflow of schematic capture, simulation setup, and waveform viewing in LTspice.
+	\item To simulate a simple \emph{RC} network and verify the results against hand-calculated values, in preparation for comparing simulation with hardware measurements in later experiments.
+\end{enumerate}
+
+\section*{What is LTspice?}
+
+LTspice is a high-performance SPICE (Simulation Program with Integrated Circuit Emphasis) simulator, schematic capture tool, and waveform viewer, distributed free of charge by Analog Devices. It allows a circuit to be drawn on screen, assigned component values and a source, and then analysed numerically -- computing node voltages and branch currents as functions of time (transient analysis), frequency (AC analysis), or DC bias (DC sweep/operating point analysis) -- without building any physical hardware. Throughout this course, LTspice will be used \emph{before} each hardware experiment to predict expected waveforms, and the simulated results will be compared with those measured on the DSO in the laboratory.
+
+\section*{Basic Workflow}
+
+\begin{enumerate}[label=\arabic*.]
+	\item \textbf{Create a new schematic.} \texttt{File} $\rightarrow$ \texttt{New Schematic}, then save it with a suitable filename before adding components (LTspice requires the file to be saved to run a simulation correctly).
+	\item \textbf{Place components.} Use the toolbar icons (or keyboard shortcuts) to place a resistor (\texttt{R}), capacitor (\texttt{C}), inductor (\texttt{L}), diode (\texttt{D}), ground (\texttt{G}), and a voltage source. Rotate/mirror using \texttt{Ctrl+R}/\texttt{Ctrl+E}.
+	\item \textbf{Wire the circuit.} Use \texttt{F3} (or the wire tool) to connect component terminals. Every circuit \emph{must} include a ground node (node 0), or the simulation will fail.
+	\item \textbf{Set component values.} Right-click a component and enter its value (e.g., \texttt{1k}, \texttt{0.1u}). For the source, right-click and choose the appropriate function (e.g., \texttt{SINE} for a sinusoidal source, specifying amplitude, frequency, and DC offset).
+	\item \textbf{Choose the analysis type.} \texttt{Simulate} $\rightarrow$ \texttt{Edit Configure Analysis}\footnote{in Version 24.x}:
+	\begin{itemize}
+		\item \texttt{.tran} -- transient (time-domain) analysis, for viewing waveforms vs. time.
+		\item \texttt{.ac} -- AC sweep, for frequency response (Bode plots).
+		\item \texttt{.op} -- DC operating point.
+	\end{itemize}
+	\item \textbf{Run the simulation.} \texttt{Simulate} $\rightarrow$ \texttt{Run} (or the \texttt{RUN/PLAY} icon). A waveform viewer window opens automatically.
+	\item \textbf{Probe voltages and currents.} Click on a wire/node in the schematic to display its voltage, or click on a component to display the current through it, in the waveform viewer. To show the voltage between nodes, click and drag the probe between the nodes.
+	\item \textbf{Add cursors and measure.} Use \texttt{Ctrl}+left-click on a trace label to attach a cursor; the cursor readout gives precise voltage, time, and (for two cursors) $\Delta t$ and $\Delta V$ -- directly analogous to DSO cursor measurements.
+\end{enumerate}
+
+\section*{Pre-Lab Exercise}
+
+Using LTspice, draw the series \emph{RC} network of Pre-Lab~1 (Figure~\ref{fig:rc_circuit}) with the $R$ and $C$ values assigned to your batch:
+
+\begin{enumerate}[label=(\alph*)]
+	\item Apply a \texttt{SINE} source with amplitude $1\,\text{V}$ (peak) at $f = f_c$ (calculated in Pre-Lab~1) and run a \texttt{.tran} simulation for at least 5 cycles.
+	\item Using cursors, measure $V_{out,pp}$ and the time delay $\Delta t$ between $v_{in}$ and $v_{out}$; hence compute $\phi$ using Equation~\eqref{eq:phase_from_time}, and compare with the theoretical value from Table~\ref{tab:theory}.
+	\item Run a \texttt{.ac} simulation from $0.01f_c$ to $100f_c$ and plot the magnitude (in dB) and phase of $v_{out}/v_{in}$. Identify $f_c$ on the plot as the $-3\,\text{dB}$ point.
+	\item Save screenshots of both simulations for submission along with your pre-lab record.
+\end{enumerate}
+
+\section*{Pre-Lab Questions}
+\begin{enumerate}[label=Q\arabic*.]
+	\item What is the difference between \texttt{.tran} and \texttt{.ac} analysis, and when would each be preferred?
+	\item Why must every LTspice schematic contain a ground (node 0) reference?
+	\item What is the purpose of the \emph{maximum timestep} parameter in a \texttt{.tran} command, and what artefact can result if it is left too large?
+	\item How would you model a real (non-ideal) function generator output impedance (typically $50\,\Omega$) in an LTspice source?
+\end{enumerate}
+
+\section*{Resources}
+
+\begin{itemize}
+	\item LTspice download and official documentation (Analog Devices):\\ \url{https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html}
+	\item LTspice Quick Reference / Getting Started guide: \url{https://www.analog.com/en/education/education-library/ltspice-getting-started-guides.html}
+	\item Analog Devices LTspice video tutorial series (YouTube):\\ \url{https://www.youtube.com/@AnalogDevicesInc}
+	\item LTwiki -- community-maintained reference for LTspice syntax and models:\\ \url{https://ltwiki.org/}
+\end{itemize}
+\section*{Other free simulation tools}
+There are other SPICE-based free tools available which may also be used instead of LTspice. Some popular tools are listed here.
+\begin{enumerate}
+	\item Qspice. Qspice is created by the creator of LTspice, Mike Engelhardt, as a modern, fast simulator: \url{https://p.qorvo.com/get-qspice}
+	\item Ngspice (requires a schematic capture tool): \url{https://ngspice.sourceforge.io}
+	\item eSim is an EDA package that goes beyond spice. Maintained by FOSSEE project under IITB. It uses ngspice as the simulation engine, and KiCad schematic for schematic entry.
+	\url{https://esim.fossee.in/home/}
+\end{enumerate}
