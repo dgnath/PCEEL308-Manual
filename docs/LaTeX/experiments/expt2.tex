@@ -9,7 +9,8 @@
 \section{Aim}
 To design, and construct a Zener diode based DC voltage regulator for a given load current and input voltage range, and to study its line regulation
 and load regulation characteristics.
-
+\section{Pre-Lab Exercise}
+Before performing the experiment, simulate the circuits and verify the designs using LTspice or any other circuit simulation software. 
 \section{Apparatus / Components Required}
 \begin{center}
 	\begin{tabular}{@{}cll@{}}
@@ -57,7 +58,7 @@ disturbances:
 \[
 I_{Z(\max)} = \frac{P_{Z(\max)}}{V_Z} = \frac{400\ \text{mW}}{5.6\ \text{V}} \approx 71.4\ \text{mA}
 \]
-
+Although this is the maximum Zener current, to operate without damage, a much lower current is assumed. Hence, an $I_{Z(max)}$ is assumed to be 50 mA.
 \paragraph{Step 2: Choose minimum Zener current.}
 To ensure the diode stays in the breakdown region even at worst case
 (minimum $V_{in}$, maximum $I_L$), a minimum holding current is chosen as
@@ -113,6 +114,8 @@ Use a $220\ \Omega,\ 1\ \text{W}$ resistor (adequate safety margin over the calc
 \end{center}
 
 \section{Circuit Diagram}
+The circuit diagram to be set up is given in Fig.~\ref{fig:zener-regulator}.
+
 \begin{figure}[htbp]
 	\centering
 	\begin{circuitikz}[american, scale=1.5, line width=0.85pt]
@@ -147,7 +150,7 @@ Use a $220\ \Omega,\ 1\ \text{W}$ resistor (adequate safety margin over the calc
 
 \paragraph{(a) Line regulation.}
 \begin{enumerate}
-	\item Connect the circuit as shown in Figure~\ref{fig:zener-regulator} with $R_L$ set to give $I_L = I_{L(\max)} = 5\ \text{mA}$ (i.e., $R_L = V_Z / I_{L(\max)} \approx 1.12\ \text{k}\Omega$).
+	\item Connect the circuit as shown in Figure~\ref{fig:zener-regulator} with $R_L$ set to give $I_L = I_{L(\max)} = 5\ \text{mA}$ (i.e., $R_L = V_Z / I_{L(\max)} \approx 1.12\ \text{k}\Omega$). A rheostat of 2.2k may be used as the load resistance $R_L$.
 	\item Vary $V_{in}$ in steps from $8\ \text{V}$ to $15\ \text{V}$, keeping $R_L$ fixed.
 	\item Note $V_{out}$ across the Zener/load for each value of $V_{in}$.
 	\item Plot $V_{out}$ versus $V_{in}$.

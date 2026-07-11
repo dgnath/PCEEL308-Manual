@@ -1,30 +1,77 @@
-\contentsline {chapter}{Preface}{2}{chapter*.2}%
-\contentsline {chapter}{Course Information}{3}{chapter*.3}%
-\contentsline {chapter}{General Instructions}{6}{chapter*.8}%
-\contentsline {chapter}{Safety Guidelines}{8}{chapter*.9}%
-\contentsline {chapter}{List of Equipment and Software}{10}{chapter*.10}%
-\contentsline {chapter}{List of Experiments}{11}{chapter*.12}%
-\contentsline {chapter}{\numberline {1}Experiment 2: Zener Diode Voltage Regulator}{13}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Aim}{13}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Apparatus / Components Required}{13}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Theory}{13}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Design}{13}{section.1.4}%
-\contentsline {paragraph}{Given specifications.}{13}{paragraph*.13}%
-\contentsline {paragraph}{Step 1: Maximum Zener current from the power rating.}{14}{paragraph*.14}%
-\contentsline {paragraph}{Step 2: Choose minimum Zener current.}{14}{paragraph*.15}%
-\contentsline {paragraph}{Step 3: Design $R_S$ for the worst case (minimum $V_{in}$, maximum $I_L$).}{14}{paragraph*.16}%
-\contentsline {paragraph}{Step 4: Verify at minimum $V_{in}$, full load (checks regulation is maintained).}{14}{paragraph*.17}%
-\contentsline {paragraph}{Step 5: Verify at maximum $V_{in}$, no load (checks Zener power rating is not exceeded).}{14}{paragraph*.18}%
-\contentsline {paragraph}{Step 6: Power rating of $R_S$.}{14}{paragraph*.19}%
-\contentsline {paragraph}{Final design summary.}{14}{paragraph*.20}%
-\contentsline {section}{\numberline {1.5}Circuit Diagram}{15}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Procedure}{15}{section.1.6}%
-\contentsline {paragraph}{(a) Line regulation.}{15}{paragraph*.22}%
-\contentsline {paragraph}{(b) Load regulation.}{15}{paragraph*.23}%
-\contentsline {section}{\numberline {1.7}Tabulation}{15}{section.1.7}%
-\contentsline {paragraph}{Line regulation ($I_L$ held at $5\ \text {mA}$).}{15}{paragraph*.24}%
-\contentsline {paragraph}{Load regulation ($V_{in}$ held constant).}{16}{paragraph*.25}%
-\contentsline {section}{\numberline {1.8}Model Graph}{16}{section.1.8}%
-\contentsline {section}{\numberline {1.9}Calculations from Observations}{16}{section.1.9}%
-\contentsline {section}{\numberline {1.10}Result}{16}{section.1.10}%
-\contentsline {section}{\numberline {1.11}Questions}{16}{section.1.11}%
+\contentsline {chapter}{Preface}{3}{chapter*.2}%
+\contentsline {chapter}{Course Information}{4}{chapter*.3}%
+\contentsline {chapter}{General Instructions}{7}{chapter*.8}%
+\contentsline {chapter}{Safety Guidelines}{9}{chapter*.9}%
+\contentsline {chapter}{List of Equipment and Software}{11}{chapter*.10}%
+\contentsline {chapter}{List of Experiments}{12}{chapter*.12}%
+\contentsline {chapter}{Pre-lab 1}{14}{chapter*.13}%
+\contentsline {subsubsection}{The Lissajous Method}{15}{subsubsection*.16}%
+\contentsline {chapter}{Pre-lab 2}{19}{chapter*.20}%
+\contentsline {chapter}{\numberline {1}Experiment 1: Clipping and Clamping Circuits using Diodes}{22}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Aim}{22}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Pre-Lab Exercise}{22}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Equipment/Components Required}{22}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Theory}{22}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Clipping Circuits}{23}{subsection.1.4.1}%
+\contentsline {paragraph}{(a) Series (Half-Wave) Clipper.}{23}{paragraph*.22}%
+\contentsline {paragraph}{(b) Shunt (Parallel) Clipper -- Positive Clipper.}{23}{paragraph*.24}%
+\contentsline {paragraph}{(c) Shunt (Parallel) Clipper -- Negative Clipper.}{23}{paragraph*.26}%
+\contentsline {paragraph}{(d) Biased Clippers.}{24}{paragraph*.28}%
+\contentsline {paragraph}{(Double (Two-Level) Clipper or Slicer.}{24}{paragraph*.34}%
+\contentsline {subsection}{\numberline {1.4.2}Clamping Circuits}{25}{subsection.1.4.2}%
+\contentsline {paragraph}{(a) Negative Clamper.}{25}{paragraph*.36}%
+\contentsline {paragraph}{(b) Positive Clamper.}{25}{paragraph*.38}%
+\contentsline {section}{\numberline {1.5}Design Procedure}{26}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Experiment Procedure}{26}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Observation Tables}{28}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Precautions}{28}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Pre-Lab / Post-Lab Questions}{29}{subsection.1.6.3}%
+\contentsline {chapter}{\numberline {2}Experiment 2: Zener Diode Voltage Regulator}{30}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Aim}{30}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Pre-Lab Exercise}{30}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Apparatus / Components Required}{30}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Theory}{30}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Design}{31}{section.2.5}%
+\contentsline {paragraph}{Given specifications.}{31}{paragraph*.42}%
+\contentsline {paragraph}{Step 1: Maximum Zener current from the power rating.}{31}{paragraph*.43}%
+\contentsline {paragraph}{Step 2: Choose minimum Zener current.}{31}{paragraph*.44}%
+\contentsline {paragraph}{Step 3: Design $R_S$ for the worst case (minimum $V_{in}$, maximum $I_L$).}{31}{paragraph*.45}%
+\contentsline {paragraph}{Step 4: Verify at minimum $V_{in}$, full load (checks regulation is maintained).}{31}{paragraph*.46}%
+\contentsline {paragraph}{Step 5: Verify at maximum $V_{in}$, no load (checks Zener power rating is not exceeded).}{31}{paragraph*.47}%
+\contentsline {paragraph}{Step 6: Power rating of $R_S$.}{31}{paragraph*.48}%
+\contentsline {paragraph}{Final design summary.}{32}{paragraph*.49}%
+\contentsline {section}{\numberline {2.6}Circuit Diagram}{32}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Procedure}{32}{section.2.7}%
+\contentsline {paragraph}{(a) Line regulation.}{32}{paragraph*.51}%
+\contentsline {paragraph}{(b) Load regulation.}{32}{paragraph*.52}%
+\contentsline {section}{\numberline {2.8}Tabulation}{33}{section.2.8}%
+\contentsline {paragraph}{Line regulation ($I_L$ held at $5\ \text {mA}$).}{33}{paragraph*.53}%
+\contentsline {paragraph}{Load regulation ($V_{in}$ held constant).}{33}{paragraph*.54}%
+\contentsline {section}{\numberline {2.9}Model Graph}{33}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Calculations from Observations}{33}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Result}{33}{section.2.11}%
+\contentsline {section}{\numberline {2.12}Questions}{34}{section.2.12}%
+\contentsline {chapter}{\numberline {3}Experiment 3: Basic RC Circuits - High-pass and Low-pass Filters}{35}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Aim}{35}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Pre-Lab Exercise}{35}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Apparatus / Components Required}{35}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Theory}{35}{section.3.4}%
+\contentsline {paragraph}{Low-pass filter.}{36}{paragraph*.55}%
+\contentsline {paragraph}{High-pass filter.}{36}{paragraph*.56}%
+\contentsline {paragraph}{Time-domain view.}{36}{paragraph*.57}%
+\contentsline {section}{\numberline {3.5}Design}{36}{section.3.5}%
+\contentsline {paragraph}{Specifications.}{36}{paragraph*.58}%
+\contentsline {paragraph}{Step 1: Choose a standard capacitor value.}{36}{paragraph*.59}%
+\contentsline {paragraph}{Step 2: Compute $R$ for the required cutoff frequency.}{36}{paragraph*.60}%
+\contentsline {paragraph}{Step 3: Verify actual cutoff frequency.}{36}{paragraph*.61}%
+\contentsline {paragraph}{Final design summary (common to both filters).}{36}{paragraph*.62}%
+\contentsline {section}{\numberline {3.6}Circuit Diagrams}{37}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Procedure}{37}{section.3.7}%
+\contentsline {paragraph}{(a) Frequency response (Bode plot).}{37}{paragraph*.65}%
+\contentsline {paragraph}{(b) Time-domain response.}{38}{paragraph*.66}%
+\contentsline {section}{\numberline {3.8}Tabulation}{38}{section.3.8}%
+\contentsline {paragraph}{Low-pass filter.}{38}{paragraph*.67}%
+\contentsline {paragraph}{High-pass filter.}{38}{paragraph*.68}%
+\contentsline {section}{\numberline {3.9}Sample Waveforms (Square Wave Input)}{38}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Result}{39}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Questions}{40}{section.3.11}%

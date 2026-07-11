@@ -29,10 +29,10 @@ Consider the series \emph{RC} circuit shown in Figure~\ref{fig:rc_circuit}, driv
 
 \begin{figure}[h!]
 	\centering
-	\begin{circuitikz}[american, scale=1.1]
+	\begin{circuitikz}[american, scale=1.1, line width = 0.85pt]
 		\draw
-		(0,0) to[sinusoidal voltage source, l=$v_{in}(t)$] (0,3)
-		(0,3) to[short] (1,3)
+		(0,0) to[sinusoidal voltage source, l=$v_{in}(t)$, *-*] (0,3)
+		(0,3) to[short, *-] (1,3)
 		(1,3) to[R, l=$R$, *-*] (3,3)
 		(3,3) to[C, l=$C$, *-*] (3,0)
 		(3,0) to[short] (0,0)
@@ -40,6 +40,8 @@ Consider the series \emph{RC} circuit shown in Figure~\ref{fig:rc_circuit}, driv
 		\draw (1,3) to[short, -o] (1,3.7) node[above]{CH1 ($v_{in}$)};
 		\draw (0,0) to[short, -o] (1,0);
 		\draw (3,3) to[short, -o] (3.7,3) node[right]{CH2 ($v_{out}$)};
+		\draw (3,0) to[short, -o] (3.7,0);
+		\draw (0,0) node[ground]{};
 	\end{circuitikz}
 	\caption{Series \emph{RC} low-pass network. CH1 of the DSO monitors the source voltage $v_{in}(t)$ and CH2 monitors the voltage across the capacitor $v_{out}(t)$. Both channels share a common ground, which is same as the reference ground of the source.}
 	\label{fig:rc_circuit}
@@ -103,7 +105,7 @@ This method is a useful independent cross-check of the time-difference method an
 	\label{fig:lissajous}
 \end{figure}
 \begin{notebox}
-	Modern DSOs have advanced measurement features that enable direct reading of the phase difference between two waveforms on screen, using cursor measurements. For more details, consult the operating manual of the DSO model. 
+	Modern DSOs have advanced measurement features that enable direct reading of the phase difference between two waveforms on screen, in addition to cursor measurements. For more details, consult the operating manual of the DSO model. 
 \end{notebox}
 
 \subsection*{Apparatus Required}
