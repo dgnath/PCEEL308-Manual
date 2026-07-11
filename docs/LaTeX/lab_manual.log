@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.4)  11 JUL 2026 11:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.4)  11 JUL 2026 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1201,7 +1201,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.54 ...-pass and Low-pass Filters}{35}{chapter.3}
+l.55 ...numberline {2.11}Result}{33}{section.2.11}
                                                   % [1
 
 ])
@@ -1258,35 +1258,35 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [14
 
 ] (./experiments/figures/PL1-VoltageMeas.pdf_tex
-<experiments/figures/PL1-VoltageMeas.pdf, id=389, page=1, 328.30574pt x 148.470
+<experiments/figures/PL1-VoltageMeas.pdf, id=404, page=1, 328.30574pt x 148.470
 17pt>
 File: experiments/figures/PL1-VoltageMeas.pdf Graphic file (type pdf)
 <use experiments/figures/PL1-VoltageMeas.pdf, page 1>
 Package pdftex.def Info: experiments/figures/PL1-VoltageMeas.pdf , page1 used o
 n input line 56.
 (pdftex.def)             Requested size: 364.19667pt x 164.71092pt.
-<experiments/figures/PL1-VoltageMeas.pdf, id=390, page=2, 328.30574pt x 148.470
+<experiments/figures/PL1-VoltageMeas.pdf, id=405, page=2, 328.30574pt x 148.470
 17pt>
 File: experiments/figures/PL1-VoltageMeas.pdf Graphic file (type pdf)
 <use experiments/figures/PL1-VoltageMeas.pdf, page 2>
 Package pdftex.def Info: experiments/figures/PL1-VoltageMeas.pdf , page2 used o
 n input line 62.
 (pdftex.def)             Requested size: 364.19667pt x 164.71092pt.
-<experiments/figures/PL1-VoltageMeas.pdf, id=391, page=3, 328.30574pt x 148.470
+<experiments/figures/PL1-VoltageMeas.pdf, id=406, page=3, 328.30574pt x 148.470
 17pt>
 File: experiments/figures/PL1-VoltageMeas.pdf Graphic file (type pdf)
 <use experiments/figures/PL1-VoltageMeas.pdf, page 3>
 Package pdftex.def Info: experiments/figures/PL1-VoltageMeas.pdf , page3 used o
 n input line 64.
 (pdftex.def)             Requested size: 364.19667pt x 164.71092pt.
-<experiments/figures/PL1-VoltageMeas.pdf, id=392, page=4, 328.30574pt x 148.470
+<experiments/figures/PL1-VoltageMeas.pdf, id=407, page=4, 328.30574pt x 148.470
 17pt>
 File: experiments/figures/PL1-VoltageMeas.pdf Graphic file (type pdf)
 <use experiments/figures/PL1-VoltageMeas.pdf, page 4>
 Package pdftex.def Info: experiments/figures/PL1-VoltageMeas.pdf , page4 used o
 n input line 66.
 (pdftex.def)             Requested size: 364.19667pt x 164.71092pt.
-<experiments/figures/PL1-VoltageMeas.pdf, id=393, page=5, 328.30574pt x 148.470
+<experiments/figures/PL1-VoltageMeas.pdf, id=408, page=5, 328.30574pt x 148.470
 17pt>
 File: experiments/figures/PL1-VoltageMeas.pdf Graphic file (type pdf)
 <use experiments/figures/PL1-VoltageMeas.pdf, page 5>
@@ -1295,7 +1295,7 @@ n input line 68.
 (pdftex.def)             Requested size: 364.19667pt x 164.71092pt.
 ) [15]
 (./experiments/figures/Lissajous.pdf_tex
-<experiments/figures/Lissajous.pdf, id=410, page=1, 157.93118pt x 175.19644pt>
+<experiments/figures/Lissajous.pdf, id=425, page=1, 157.93118pt x 175.19644pt>
 File: experiments/figures/Lissajous.pdf Graphic file (type pdf)
 <use experiments/figures/Lissajous.pdf, page 1>
 Package pdftex.def Info: experiments/figures/Lissajous.pdf , page1 used on inpu
@@ -1341,7 +1341,7 @@ Overfull \hbox (9.47197pt too wide) in paragraph at lines 64--65
 1/cmtt/m/n/10.95 https : / / www . analog . com / en / education /
  []
 
-[20]) (./experiments/expt1.tex [21]
+[20]) (./experiments/clipping_clamping.tex [21]
 Chapter 1.
 [22
 
@@ -1391,7 +1391,7 @@ Overfull \hbox (3.99455pt too wide) in paragraph at lines 554--555
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25] [26] [27] [28]) (./experiments/expt2.tex [29]
+[25] [26] [27] [28]) (./experiments/zener_regulator.tex [29]
 Chapter 2.
 
 Overfull \hbox (0.94963pt too wide) in paragraph at lines 7--7
@@ -1400,7 +1400,7 @@ Overfull \hbox (0.94963pt too wide) in paragraph at lines 7--7
 
 [30
 
-] [31] [32] [33]) (./experiments/expt3.tex [34]
+] [31] [32] [33]) (./experiments/RC_freq_response.tex [34]
 Chapter 3.
 [35
 
@@ -1446,13 +1446,13 @@ L3 programming layer <2026-06-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `lab_manual.out' has not changed.
-(rerunfilecheck)             Checksum: DFF1DA26152BE0CA1E64FC1F219A3004;6450.
+(rerunfilecheck)             Checksum: 24D75D04B95F9DBB67725B4350CF32EA;6712.
  ) 
 Here is how much of TeX's memory you used:
- 65665 strings out of 469115
- 1730502 string characters out of 5458879
- 2790645 words of memory out of 5000000
- 93630 multiletter control sequences out of 15000+600000
+ 65676 strings out of 469115
+ 1730889 string characters out of 5458879
+ 2790919 words of memory out of 5000000
+ 93636 multiletter control sequences out of 15000+600000
  649818 words of font info for 93 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,21n,118p,783b,2495s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1489,10 +1489,10 @@ e1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1
 /public/cm-super/sfti1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/p
 ublic/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw
 /zapfding/uzdr.pfb>
-Output written on lab_manual.pdf (42 pages, 645704 bytes).
+Output written on lab_manual.pdf (42 pages, 648559 bytes).
 PDF statistics:
- 954 PDF objects out of 1000 (max. 8388607)
- 834 compressed objects within 9 object streams
- 318 named destinations out of 1000 (max. 500000)
- 403 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 980 PDF objects out of 1000 (max. 8388607)
+ 860 compressed objects within 9 object streams
+ 323 named destinations out of 1000 (max. 500000)
+ 427 words of extra memory for PDF output out of 10000 (max. 10000000)
 

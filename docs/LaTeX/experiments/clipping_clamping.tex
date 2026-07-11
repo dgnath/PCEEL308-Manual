@@ -649,10 +649,12 @@ For an input sine wave of amplitude $V_m$, the steady-state clamped output ideal
 	\text{Positive clamper: } && v_{out} &\in [-V_F,\; 2V_m - V_F]. \label{eq:pos_clamp}
 \end{align}
 The time constant $R_L C$ must satisfy $R_L C \gg T$ (the input period) so that the capacitor voltage does not decay appreciably between successive charging peaks (poor choice of $R_L C$ leads to \emph{waveform tilt/sag}).
-
-
+\section{Circuit Diagrams}
+The circuits are as shown in the previous sections.
+\begin{notebox}
+	While preparing the lab-report, circuit diagrams shall contain proper labels for the components, including the component part numbers (such as 1N4001), and values/parameters (example: $5\ V_{pp}$, Sine, 50 Hz, for the source; $R_1$, $50\ \text{k}\Omega$, etc.).
+\end{notebox}	
 \section{Design Procedure}
-
 \begin{enumerate}[label=(\alph*)]
 	\item Select the operating signal's frequency and amplitude, $V_m$ and $f$. 
 	\item For a biased clipper required to clip at a level $V_{clip}$, select $V_R = V_{clip} - V_F$ using a potential divider from the DC supply, or a battery/regulated source directly. A Zener diode may also be chosen, as described earlier.
@@ -675,9 +677,20 @@ The time constant $R_L C$ must satisfy $R_L C \gg T$ (the input period) so that 
 	\item Vary the input frequency (e.g., to $100\,\text{Hz}$) while keeping $R_L C$ fixed, and observe/record the effect on clamper output tilt. Explain the observation.
 \end{enumerate}
 
-\subsection{Observation Tables}
+\section{Precautions}
+\begin{itemize}
+	\item Observe correct diode polarity while assembling each circuit; an inverted diode produces the mirror-image (and often misleading) result.
+	\item Do not exceed the diode's maximum forward current or reverse voltage ratings.
+	\item Ensure a common ground between the function generator and both DSO channels.
+	\item For clamping circuits, allow a few cycles for the capacitor to reach steady-state charge before recording the output.
+	\item Use electrolytic capacitors, if used, with correct polarity as per the expected DC level at that node.
+\end{itemize}
+\section{Expected Waveforms}
+The sample waveforms for the clipping circuits are as shown in Figs.~\ref{fig:wavePosClipper}, \ref{fig:waveNegClipper},\ref{fig:biasedClipperWaves}, and \ref{fig:slicerWaves}. The waveforms for the clamping circuits are as shown in Figs.~\ref{fig:negWave_clamper}, ~\ref{fig:posWaveClamper}. When recording waveforms, note down all the salient points/features of the waveforms, such as voltage/time details.
 
-\begin{table}[hb!]
+\section{Observation Tables}
+The observation table for the clipping circuits is given in Table~\ref{tab:ObsClippers}. Use Table~\ref{tab:ObsClampers} to tabulate the Clamper circuit observations.
+\begin{table}[ht!]
 	\centering
 	\begin{tabular}{@{}lccccc@{}}
 		\toprule
@@ -692,9 +705,10 @@ The time constant $R_L C$ must satisfy $R_L C \gg T$ (the input period) so that 
 		\bottomrule
 	\end{tabular}
 	\caption{Clipping circuits: theoretical vs. measured clipping levels.}
+	\label{tab:ObsClippers}
 \end{table}
 
-\begin{table}[hb!]
+\begin{table}[ht!]
 	\centering
 	\begin{tabular}{@{}lcccc@{}}
 		\toprule
@@ -705,20 +719,19 @@ The time constant $R_L C$ must satisfy $R_L C \gg T$ (the input period) so that 
 		\bottomrule
 	\end{tabular}
 	\caption{Clamping circuits: theoretical vs. measured output extremes.}
+	\label{tab:ObsClampers}
 \end{table}
+\section{Results}
+\begin{enumerate}
+	\item The diode-based clipping circuits with and without external bias are set-up and the output waveforms were studied. 
+	\item The diode-based clamping circuits were set-up and the waveforms were studied.
+\end{enumerate}
 
-\subsection{Precautions}
-\begin{itemize}
-	\item Observe correct diode polarity while assembling each circuit; an inverted diode produces the mirror-image (and often misleading) result.
-	\item Do not exceed the diode's maximum forward current or reverse voltage ratings.
-	\item Ensure a common ground between the function generator and both DSO channels.
-	\item For clamping circuits, allow a few cycles for the capacitor to reach steady-state charge before recording the output.
-	\item Use electrolytic capacitors, if used, with correct polarity as per the expected DC level at that node.
-\end{itemize}
+
 \begin{notebox}
 	Experiment with higher frequency signals. What do you observe? Can you explain why circuit performance is not as expected at higher frequencies?
 \end{notebox}
-\subsection{Pre-Lab / Post-Lab Questions}
+\subsection{Questions}
 \begin{enumerate}[label=Q\arabic*.]
 	\item Distinguish between series and shunt clipper configurations in terms of output impedance and loading effects.
 	\item Derive the expression for the clipping level of the biased clipper of Figure~\ref{fig:biased_clipper} in terms of $V_R$ and $V_F$.
