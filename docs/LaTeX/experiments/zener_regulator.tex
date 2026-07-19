@@ -4,7 +4,7 @@
 % Requires in the root preamble: circuitikz, amsmath, booktabs
 % ==============================================================
 
-\chapter{Experiment 2: Zener Diode Voltage Regulator}
+\chapter{Zener Diode Voltage Regulator}
 
 \section{Aim}
 To design, and construct a Zener diode based DC voltage regulator for a given load current and input voltage range, and to study its line regulation
@@ -40,8 +40,8 @@ rated current $I_{Z(\max)}$ (set by its power rating).
 The regulator must continue to hold $V_{out} \approx V_Z$ under two independent
 disturbances:
 \begin{itemize}
-	\item \textbf{Line regulation:} $V_{in}$ varies over its specified range while $I_L$ is held constant.
-	\item \textbf{Load regulation:} $I_L$ varies (via $R_L$) while $V_{in}$ is held constant.
+	\item \textbf{Line regulation:} $V_{in}$ varies over its specified range while the load current $I_L$ is held constant.
+	\item \textbf{Load regulation:} The load current $I_L$ varies (via $R_L$) while $V_{in}$ is held constant.
 \end{itemize}
 
 \section{Design}
@@ -97,7 +97,12 @@ P_Z = I_Z \times V_Z = 42.7\ \text{mA} \times 5.6\ \text{V} \approx 239\ \text{m
 P_{R_S} = \frac{(V_{in(\max)} - V_Z)^2}{R_S} = \frac{(9.4)^2}{220} \approx 0.40\ \text{W}
 \]
 Use a $220\ \Omega,\ 1\ \text{W}$ resistor (adequate safety margin over the calculated $0.40$~W).
-
+\paragraph{Step 7: Selecting Load Resistance $R_L$.}
+The load resistance is a variable resistance, preferably a rheostat. The load current should be variable the range $0--I_{Lmax}$. Hence, the minimum resistance should be at least:
+\[
+R_{L,min}\frac{V_Z}{I_{Lmax}} = \frac{\SI{5.6}{\volt}}{\SI{5}{\milli\ampere}} = \SI{1.12}{\kilo\ohm}
+\]
+Hence, choose a $\SI{1}{\kilo\ohm}$ resistance as the fixed load, in series with a larger variable resistance ($\SI{10}{\kilo\ohm})$ to vary the load current. 
 \paragraph{Final design summary.}
 \begin{center}
 	\begin{tabular}{@{}ll@{}}
@@ -123,13 +128,13 @@ The circuit diagram to be set up is given in Fig.~\ref{fig:zener-regulator}.
 		(0,0) to[battery, name=batt, l=$V_{in}$,invert,  *-] (0,3)
 		(0,3) to[short] (1,3)
 		%(1,3) to[short, -*] (1,1.5)
-		(1,3) to[rmeter, t= V,l=$0-20\ \text{V}$, -*] (1,0)
+		(1,3) to[rmeter, name=VMip, t= V,l=$0-20\ \text{V}$, -*] (1,0)
 		(1,3) to[R, name=seriesR, l=$R_S$, *-*] (3.5,3)
 		(3,3) to[short] (5.3,3)
 		(3.5,3) to[zzD, name=zenerD, l=$D_Z$, *-*, invert] (3.5,0)
-		(5.3,3) to[rmeter, t = V,l=$0-10\ \text{V}$, -* ] (5.3,0)
+		(5.3,3) to[rmeter, name=VMop,t= V,l=$0-10\ \text{V}$, -* ] (5.3,0)
 		(5.3,3) to[rmeter, t= A,l=$0-10\ \text{mA}$, *-] (7.4,3)
-		(7.4,3) to[vR, l=$R_L$, -] (7.4,0)
+		(7.4,3) to[vR, l=$R_L$,invert, -] (7.4,0)
 		(7.4,0) to[short] (5,0)
 		(3,0) to[short] (5,0)
 		(3,0) to[short] (0,0)
@@ -139,8 +144,10 @@ The circuit diagram to be set up is given in Fig.~\ref{fig:zener-regulator}.
 		%\draw (0,0) to [rmeter, t= V] (4,3);
 		%\draw (0,0) to [rmeter, t= A] (2,3);
 		\draw (0,0) node[ground]{};
-		\node[below right=0.35cm, align=left] at (zenerD.center)  {$5.6\ \text{V}$\\$400\ \text{mW}$};
-		\node[below=0.3cm, align=center] at (seriesR.center)  {$150\ \Omega$};
+		\node[below right=0.37cm, align=left] at (zenerD.center)  {$5.6\ \text{V}$\\$400\ \text{mW}$};
+		\node[below right=0.37cm, align=left] at (VMip.center) {MC};
+		\node[below right=0.37cm, align=left] at (VMop.center) {MC};
+		\node[below=0.3cm, align=center] at (seriesR.center)  {$220\ \Omega,\ \text{1 W}$};
 	\end{circuitikz}
 	\caption{Zener diode voltage regulator circuit}
 	\label{fig:zener-regulator}
@@ -150,7 +157,7 @@ The circuit diagram to be set up is given in Fig.~\ref{fig:zener-regulator}.
 
 \paragraph{(a) Line regulation.}
 \begin{enumerate}
-	\item Connect the circuit as shown in Figure~\ref{fig:zener-regulator} with $R_L$ set to give $I_L = I_{L(\max)} = 5\ \text{mA}$ (i.e., $R_L = V_Z / I_{L(\max)} \approx 1.12\ \text{k}\Omega$). A rheostat of 2.2k may be used as the load resistance $R_L$.
+	\item Connect the circuit as shown in Figure~\ref{fig:zener-regulator} with $R_L$ set to give $I_L = I_{L(\max)} = 5\ \text{mA}$ (i.e., $R_L = V_Z / I_{L(\max)} \approx 1.12\ \text{k}\Omega$). A rheostat of 2.2 k may be used as the load resistance $R_L$.
 	\item Vary $V_{in}$ in steps from $8\ \text{V}$ to $15\ \text{V}$, keeping $R_L$ fixed.
 	\item Note $V_{out}$ across the Zener/load for each value of $V_{in}$.
 	\item Plot $V_{out}$ versus $V_{in}$.
@@ -159,7 +166,7 @@ The circuit diagram to be set up is given in Fig.~\ref{fig:zener-regulator}.
 \paragraph{(b) Load regulation.}
 \begin{enumerate}
 	\item Fix $V_{in}$ at a convenient value within the design range (e.g., $V_{in} = 12\ \text{V}$).
-	\item Vary $R_L$ (using the decade resistance box) so that $I_L$ varies from $0$ (open circuit) to $I_{L(\max)} = 5\ \text{mA}$.
+	\item Vary $R_L$ (using the rheostat) so that $I_L$ varies from $0$ (open circuit) to $I_{L(\max)} = 5\ \text{mA}$.
 	\item Note $V_{out}$ for each value of $I_L$.
 	\item Plot $V_{out}$ versus $I_L$.
 \end{enumerate}

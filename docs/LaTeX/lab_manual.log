@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.4)  11 JUL 2026 14:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.4)  19 JUL 2026 11:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1096,24 +1096,24 @@ File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
 (./lab_manual.aux)
 \openout1 = `lab_manual.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
 
 (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1174,20 +1174,20 @@ enefit from \pgfplotsset{compat=1.18} (current compat level: 1.17).
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 142.
+Package hyperref Info: Link coloring ON on input line 141.
 (./lab_manual.out) (./lab_manual.out)
 \@outlinefile=\write4
 \openout4 = `lab_manual.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 158
+LaTeX Font Info:    Trying to load font information for U+msa on input line 157
 .
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 158
+LaTeX Font Info:    Trying to load font information for U+msb on input line 157
 .
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1201,7 +1201,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.55 ...numberline {2.11}Result}{33}{section.2.11}
+l.54 ...mberline {2.8}Tabulation}{39}{section.2.8}
                                                   % [1
 
 ])
@@ -1216,34 +1216,41 @@ l.55 ...numberline {2.11}Result}{33}{section.2.11}
 
 ] [5]) (./general_instr.tex [6] [7
 
-]) (./safety.tex
-[8] [9
+{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+ [8]) (./safety.tex
+[9] [10
 
-]) (./equipment.tex [10]
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
+]) (./equipment.tex [11] [12
+
+]
+Overfull \hbox (1.52292pt too wide) in paragraph at lines 77--79
+[] \T1/cmr/bx/n/10.95 Pur-pose: \T1/cmr/m/n/10.95 Mea-sures var-i-ous elec-tri-
+cal pa-ram-e-ters like volt-age (AC/DC), cur-rent (AC/DC),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--109
 []|\T1/cmr/m/n/10.95 Regulated DC Power Sup-ply
  []
 
 
-Underfull \hbox (badness 7030) in paragraph at lines 12--13
+Underfull \hbox (badness 7030) in paragraph at lines 111--112
 []|\T1/cmr/m/n/10.95 Input ex-ci-ta-tion for am-pli-fiers, fil-ters, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--20
+Underfull \hbox (badness 10000) in paragraph at lines 119--119
 []|\T1/cmr/m/n/10.95 Active and Pas-sive Com-po-nents
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 20--20
+Underfull \hbox (badness 1127) in paragraph at lines 119--119
 \T1/cmr/m/n/10.95 MOS-FETs, re-sis-tors, ca-pac-i-tors, in-
  []
 
-) (./list_exp.tex [11
+) (./list_exp.tex [13] [14] [15
 
-] [12
-
-]) (./experiments/prelab1.tex [13]
+]) (./experiments/prelab1.tex [16]
 Overfull \hbox (2.23866pt too wide) in paragraph at lines 28--29
 \T1/cmr/m/n/10.95 Consider the se-ries \T1/cmr/m/it/10.95 RC \T1/cmr/m/n/10.95 
 cir-cuit shown in Fig-ure [][]1[][], driven by a si-nu-soidal source $\OML/cmm/
@@ -1255,53 +1262,53 @@ OML/cmm/m/it/10.95 V[] []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 !t\OT1/cmr/m/n
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14
+[17
 
 ] (./experiments/figures/PL1-VoltageMeas.pdf_tex
-<experiments/figures/PL1-VoltageMeas.pdf, id=404, page=1, 328.30574pt x 148.470
+<experiments/figures/PL1-VoltageMeas.pdf, id=549, page=1, 328.30574pt x 148.470
 17pt>
 File: experiments/figures/PL1-VoltageMeas.pdf Graphic file (type pdf)
 <use experiments/figures/PL1-VoltageMeas.pdf, page 1>
 Package pdftex.def Info: experiments/figures/PL1-VoltageMeas.pdf , page1 used o
 n input line 56.
 (pdftex.def)             Requested size: 364.19667pt x 164.71092pt.
-<experiments/figures/PL1-VoltageMeas.pdf, id=405, page=2, 328.30574pt x 148.470
+<experiments/figures/PL1-VoltageMeas.pdf, id=550, page=2, 328.30574pt x 148.470
 17pt>
 File: experiments/figures/PL1-VoltageMeas.pdf Graphic file (type pdf)
 <use experiments/figures/PL1-VoltageMeas.pdf, page 2>
 Package pdftex.def Info: experiments/figures/PL1-VoltageMeas.pdf , page2 used o
 n input line 62.
 (pdftex.def)             Requested size: 364.19667pt x 164.71092pt.
-<experiments/figures/PL1-VoltageMeas.pdf, id=406, page=3, 328.30574pt x 148.470
+<experiments/figures/PL1-VoltageMeas.pdf, id=551, page=3, 328.30574pt x 148.470
 17pt>
 File: experiments/figures/PL1-VoltageMeas.pdf Graphic file (type pdf)
 <use experiments/figures/PL1-VoltageMeas.pdf, page 3>
 Package pdftex.def Info: experiments/figures/PL1-VoltageMeas.pdf , page3 used o
 n input line 64.
 (pdftex.def)             Requested size: 364.19667pt x 164.71092pt.
-<experiments/figures/PL1-VoltageMeas.pdf, id=407, page=4, 328.30574pt x 148.470
+<experiments/figures/PL1-VoltageMeas.pdf, id=552, page=4, 328.30574pt x 148.470
 17pt>
 File: experiments/figures/PL1-VoltageMeas.pdf Graphic file (type pdf)
 <use experiments/figures/PL1-VoltageMeas.pdf, page 4>
 Package pdftex.def Info: experiments/figures/PL1-VoltageMeas.pdf , page4 used o
 n input line 66.
 (pdftex.def)             Requested size: 364.19667pt x 164.71092pt.
-<experiments/figures/PL1-VoltageMeas.pdf, id=408, page=5, 328.30574pt x 148.470
+<experiments/figures/PL1-VoltageMeas.pdf, id=553, page=5, 328.30574pt x 148.470
 17pt>
 File: experiments/figures/PL1-VoltageMeas.pdf Graphic file (type pdf)
 <use experiments/figures/PL1-VoltageMeas.pdf, page 5>
 Package pdftex.def Info: experiments/figures/PL1-VoltageMeas.pdf , page5 used o
 n input line 68.
 (pdftex.def)             Requested size: 364.19667pt x 164.71092pt.
-) [15]
+) [18]
 (./experiments/figures/Lissajous.pdf_tex
-<experiments/figures/Lissajous.pdf, id=425, page=1, 157.93118pt x 175.19644pt>
+<experiments/figures/Lissajous.pdf, id=571, page=1, 157.93118pt x 175.19644pt>
 File: experiments/figures/Lissajous.pdf Graphic file (type pdf)
 <use experiments/figures/Lissajous.pdf, page 1>
 Package pdftex.def Info: experiments/figures/Lissajous.pdf , page1 used on inpu
 t line 56.
 (pdftex.def)             Requested size: 227.62206pt x 252.51791pt.
-) [16 <./experiments/figures/PL1-VoltageMeas.pdf> <./experiments/figures/PL1-Vo
+) [19 <./experiments/figures/PL1-VoltageMeas.pdf> <./experiments/figures/PL1-Vo
 ltageMeas.pdf
 
 pdfTeX warning: /usr/local/bin/pdflatex (file ./experiments/figures/PL1-Voltage
@@ -1326,8 +1333,7 @@ ge
 
 pdfTeX warning: /usr/local/bin/pdflatex (file ./experiments/figures/Lissajous.p
 df): PDF inclusion: multiple pdfs with page group included in a single page
->] [17]) (./experiments/prelab2.tex [18{/usr/local/texlive/2026/texmf-dist/font
-s/enc/dvips/cm-super/cm-super-ts1.enc}] [19
+>] [20]) (./experiments/prelab2.tex [21] [22
 
 ]
 Overfull \hbox (43.77574pt too wide) in paragraph at lines 63--64
@@ -1341,68 +1347,80 @@ Overfull \hbox (9.47197pt too wide) in paragraph at lines 64--65
 1/cmtt/m/n/10.95 https : / / www . analog . com / en / education /
  []
 
-[20]) (./experiments/clipping_clamping.tex [21]
-Chapter 1.
-[22
+[23]) (./experiments/clipping_clamping.tex [24]
+Experiment 1.
+[25
+
+] [26] [27] [28
 
 ]
-Overfull \hbox (80.47755pt too wide) in paragraph at lines 93--94
- [][] 
- []
-
-[23]
-Overfull \hbox (80.47755pt too wide) in paragraph at lines 181--182
+Overfull \hbox (10.99263pt too wide) in paragraph at lines 283--284
  [][] 
  []
 
 
-Overfull \hbox (32.10799pt too wide) in paragraph at lines 286--287
+Overfull \hbox (9.54129pt too wide) in paragraph at lines 340--341
  [][] 
  []
 
 
-Overfull \hbox (32.10799pt too wide) in paragraph at lines 306--307
+Overfull \hbox (18.05798pt too wide) in paragraph at lines 445--446
  [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (32.10799pt too wide) in paragraph at lines 361--362
+Overfull \hbox (32.10799pt too wide) in paragraph at lines 471--472
  [][] 
  []
 
 
-Overfull \hbox (32.10799pt too wide) in paragraph at lines 381--382
+Overfull \hbox (32.10799pt too wide) in paragraph at lines 491--492
  [][] 
  []
 
 
-Overfull \hbox (69.66756pt too wide) in paragraph at lines 469--470
+Overfull \hbox (12.92729pt too wide) in paragraph at lines 523--524
+[][] 
+ []
+
+
+Overfull \hbox (32.10799pt too wide) in paragraph at lines 572--573
  [][] 
  []
 
-[24]
-Overfull \hbox (3.99455pt too wide) in paragraph at lines 554--555
+
+Overfull \hbox (32.10799pt too wide) in paragraph at lines 592--593
  [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[25] [26] [27] [28]) (./experiments/zener_regulator.tex [29]
-Chapter 2.
-
-Overfull \hbox (0.94963pt too wide) in paragraph at lines 7--7
-|\T1/cmr/bx/n/24.88 Experiment 2: Zener Diode Volt-age Reg-
+Overfull \hbox (12.17186pt too wide) in paragraph at lines 674--675
+ [][] 
  []
 
-[30
+[29] [30] [31] [32]
+Overfull \hbox (3.99455pt too wide) in paragraph at lines 751--752
+ [][] 
+ []
 
-] [31] [32] [33]) (./experiments/RC_freq_response.tex [34]
-Chapter 3.
-[35
+
+LaTeX Warning: Reference `fig:biased_clipper' on page 33 undefined on input lin
+e 851.
+
+[33
+
+] [34]
+
+LaTeX Warning: Reference `fig:biased_clipper' on page 35 undefined on input lin
+e 916.
+
+) (./experiments/zener_regulator.tex [35]
+Experiment 2.
+[36
+
+] [37] [38] [39]) (./experiments/RC_freq_response.tex [40]
+Experiment 3.
+[41
 
 ]
 Overfull \hbox (17.9489pt too wide) detected at line 62
@@ -1414,9 +1432,9 @@ H[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/1
 90[] \OMS/cmsy/m/n/10.95 ^^@ [][]  [] \OML/cmm/m/it/10.95 :
  []
 
-[36]
+[42]
 
-LaTeX Warning: Reference `tab:obsFreqResp' on page 37 undefined on input line 1
+LaTeX Warning: Reference `tab:obsFreqResp' on page 43 undefined on input line 1
 58.
 
 
@@ -1427,7 +1445,7 @@ m/it/10.95 f[]$ \T1/cmr/m/n/10.95 and asymp-totic slopes of $\OMS/cmsy/m/n/10.9
 5 ^^F\OT1/cmr/m/n/10.95 20 []$
  []
 
-[37]
+[43]
 Package pgfplots info on input line 227: Using 'lua backend=false' for axis: xm
 ode=log unsupported (yet).
 Package pgfplots info on input line 236: Using 'lua backend=false' for axis: xm
@@ -1436,7 +1454,47 @@ Package pgfplots info on input line 262: Using 'lua backend=false' for axis: xm
 ode=log unsupported (yet).
 Package pgfplots info on input line 271: Using 'lua backend=false' for axis: xm
 ode=log unsupported (yet).
- [38] [39] [40]) [41] (./lab_manual.aux)
+ [44] [45] [46]) (./experiments/rc_coupled_amp.tex [47]
+Experiment 4.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[48
+
+] [49] [50]
+Overfull \hbox (5.00937pt too wide) detected at line 172
+[][][]\OML/cmm/m/it/10.95 R[] \OT1/cmr/m/n/10.95 = [] = [] = [] = 2\OML/cmm/m/i
+t/10.95 :\OT1/cmr/m/n/10.95 4 [] ([]2\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 2 
+[])
+ []
+
+[51]
+Overfull \hbox (1.70943pt too wide) in paragraph at lines 251--252
+[]\T1/cmr/m/n/10.95 Adjust the sig-nal gen-er-a-tor am-pli-tude so that the in-
+put volt-age $\OML/cmm/m/it/10.95 V[]$ \T1/cmr/m/n/10.95 is small (e.g., $\OT1/
+cmr/m/n/10.95 20[][]$\T1/cmr/m/n/10.95 ),
+ []
+
+[52]
+Package pgfplots info on input line 289: Using 'lua backend=false' for axis: xm
+ode=log unsupported (yet).
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (7.13376pt too wide) in paragraph at lines 343--354
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[53]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[54] [55]) [56] (./lab_manual.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
@@ -1446,16 +1504,16 @@ L3 programming layer <2026-06-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `lab_manual.out' has not changed.
-(rerunfilecheck)             Checksum: 24D75D04B95F9DBB67725B4350CF32EA;6712.
+(rerunfilecheck)             Checksum: 24B91A616B271076CB82409F77AF85D9;10770.
  ) 
 Here is how much of TeX's memory you used:
- 65676 strings out of 469115
- 1730889 string characters out of 5458879
- 2790919 words of memory out of 5000000
- 93636 multiletter control sequences out of 15000+600000
- 649818 words of font info for 93 fonts, out of 8000000 for 9000
+ 66084 strings out of 469115
+ 1738231 string characters out of 5458879
+ 2790831 words of memory out of 5000000
+ 93913 multiletter control sequences out of 15000+600000
+ 652633 words of font info for 98 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 99i,21n,118p,783b,2495s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,21n,118p,827b,2486s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
 , replaced by a fixed one
@@ -1463,36 +1521,40 @@ pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
 usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
-r/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
-cal/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/t
-exlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
-ive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
-/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
-26/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/202
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2
-026/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/202
-6/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2026/
-texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2026/te
-xmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2026/texm
-f-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2026/texmf-
-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2026/texmf-di
-st/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2026/texmf-dist
-/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2026/texmf-dist/f
-onts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2026/texmf-dist/fon
-ts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts
-/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1
-/public/cm-super/sfti1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/p
-ublic/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw
-/zapfding/uzdr.pfb>
-Output written on lab_manual.pdf (42 pages, 648559 bytes).
+r/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loca
+l/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
+texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/tex
+live/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
+e/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2026/
+texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2026/te
+xmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2026/texm
+f-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2026/texmf-
+dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2026/texmf-di
+st/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2026/texmf-dist
+/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2026/texmf-dist/f
+onts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2026/texmf-dist/fon
+ts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2026/texmf-dist/fonts
+/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2026/texmf-dist/fonts/t
+ype1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/typ
+e1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1
+/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pub
+lic/cm-super/sfti0900.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/publi
+c/cm-super/sfti1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/
+cm-super/sfti1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm
+-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/zapfdin
+g/uzdr.pfb>
+Output written on lab_manual.pdf (57 pages, 776258 bytes).
 PDF statistics:
- 980 PDF objects out of 1000 (max. 8388607)
- 860 compressed objects within 9 object streams
- 323 named destinations out of 1000 (max. 500000)
- 427 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1311 PDF objects out of 1440 (max. 8388607)
+ 1165 compressed objects within 12 object streams
+ 446 named destinations out of 1000 (max. 500000)
+ 627 words of extra memory for PDF output out of 10000 (max. 10000000)
 

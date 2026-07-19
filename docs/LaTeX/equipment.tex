@@ -1,5 +1,104 @@
 \chapter*{List of Equipment and Software}
 \addcontentsline{toc}{chapter}{List of Equipment and Software}
+\section*{Introduction to Essential Lab Equipment}
+Familiarity with the following equipment is essential for performing experiments in this lab.
+\subsection*{Digital Storage Oscilloscope (DSO)}
+
+\begin{itemize}
+	\item \textbf{Purpose:} The DSO is used to visualize and analyze time-varying electrical signals
+(waveforms). It displays voltage as a function of time.
+	\item \textbf{Key Controls:} 
+	\begin{itemize}
+		\item \textbf{Vertical (Volts/Div)}: Controls the voltage scale on the screen (voltage per
+		vertical division).
+		\item \textbf{Horizontal (Sec/Div):} Controls the time scale on the screen (time per horizontal
+		division).
+		\item \textbf{Trigger:} Stabilizes repetitive waveforms on the screen. Adjust trigger level and
+		mode (edge, auto, normal).
+		\item \textbf{Channels:} DSOs typically have multiple input channels (CH1, CH2, etc.) to view
+		multiple signals simultaneously.
+		\item \textbf{Cursors/Measurements:} Use cursors to precisely measure voltage and time
+		intervals. Most DSOs have built-in automated measurement functions (e.g., Vpp,
+		Vrms, frequency, period).
+	\end{itemize}
+	
+	\item \textbf{Usage Tips:} 
+	\begin{itemize}
+		\item 	Always use a proper probe (1X or 10X). Understand the attenuation factor.
+		Calibrate probes if necessary.
+		\item Ground connections are crucial for accurate measurements.
+		\item Start with auto-set if you're unsure of the signal characteristics, then fine-tune.
+	\end{itemize}
+
+\end{itemize}
+\subsection*{Function Generator}
+\begin{itemize}
+	\item \textbf{Purpose:} Generates various standard waveforms (sine, square, triangle, pulse) at
+	specified frequencies and amplitudes.
+	\item \textbf{Key Controls:}
+	\begin{itemize}
+		\item \textbf{Waveform Selection:} Selects the desired output waveform.
+		\item \textbf{Frequency}: Sets the output frequency.
+		\item \textbf{Amplitude:} Sets the peak-to-peak voltage of the output waveform.
+		\item \textbf{DC Offset:} Adds a DC voltage component to the output signal.
+		\item \textbf{Output Impedance:} Typically 50 $\Omega$. Be aware of impedance matching.
+	\end{itemize}
+	\textbf{Usage Tips:}
+	\begin{itemize}
+		\item 	Connect the output of the function generator to your circuit's input.
+		\item Always check the output on the oscilloscope before connecting to your circuit to
+		ensure it's set correctly.
+	\end{itemize}
+
+\end{itemize}
+
+\subsection*{DC Power Supply}
+\begin{itemize}
+	\item \textbf{Purpose:} Provides stable DC voltage and current to power your circuits.
+	\item \textbf{Key Controls:}
+	\begin{itemize}
+		\item \textbf{Voltage Adjustment:} Sets the output voltage.
+		\item \textbf{Current Limit:} Sets the maximum current the supply can deliver. This is a
+		crucial safety feature to protect your circuit from excessive current.
+		\item \textbf{Output On/Off:} Turns the power supply output on or off.
+	\end{itemize}
+	\textbf{Usage Tips:}
+	\begin{itemize}
+		\item Always set the voltage and current limit before connecting to your circuit.
+		Start with a lower voltage and gradually increase if needed.
+		\item If the current limit indicator lights up, it means your circuit is drawing more
+		current than allowed, possibly indicating a short circuit or fault. Turn off power
+		immediately and troubleshoot.
+	\end{itemize}
+\end{itemize}
+
+\subsection*{Digital Multimeter (DMM)}
+\begin{itemize}
+	\item\textbf{ Purpose:} Measures various electrical parameters like voltage (AC/DC), current
+	(AC/DC), resistance, and continuity.
+	\item \textbf{Key Functions:}
+	\begin{itemize}
+		\item 	\textbf{Voltage Measurement (V):} Connect in parallel with the component or circuit
+		portion you want to measure. Select AC/DC option appropriately.
+		\item \textbf{Current Measurement (A):} Connect in series with the circuit. This requires
+		breaking the circuit. Be cautious about the current range.
+		\item \textbf{Resistance Measurement ($\Omega$):} Measure resistance of disconnected
+		components. Never measure resistance in an active circuit.
+		\item \textbf{Continuity Test:} Beeps if there is a low-resistance path (useful for checking
+		connections).
+	\end{itemize}
+
+	\textbf{Usage Tips:}
+	\begin{itemize}
+		\item Always select the correct function (V, A, $\Omega$) and range before making a
+		measurement.
+		\item For current measurements, always connect the DMM in series. Incorrect
+		connection can blow the internal fuse.
+		\item Ensure the circuit is de-energized when measuring resistance.
+	\end{itemize}
+	
+\end{itemize}
+
 \begin{table}[H]
 	\centering
 	\renewcommand{\arraystretch}{1.4}

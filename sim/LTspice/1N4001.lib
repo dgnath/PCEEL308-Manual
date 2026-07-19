@@ -1,0 +1,12 @@
+*produced by Vishay General Semiconductor Taiwan
+*Sam Liao, 2024/10/15
+
+
+
+.MODEL 1N4004 D (
++T_MEASURED= 27             
++is       = 1.43733E-008   rs       = 0.0414712      n        = 1.80829        
++xti      = 3              bv       = 440            eg       = 1.11           
++cjo      = 2.8119E-011    m        = 0.346714       vj       = 0.700053            
++tt       = 4.10886E-006   ikf      = 0              fc       = 0.5            
++ibv      = 10 )

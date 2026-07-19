@@ -31,7 +31,6 @@
 \usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage{import}
-\usepackage{subcaption}
 % ============================================================
 % PAGE STYLE
 % ============================================================
@@ -43,7 +42,7 @@
 \fancyfoot[L]{Department of Electrical \& Electronics Engineering | GEC Barton Hill}
 \fancyfoot[R]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
-
+\renewcommand{\chaptername}{Experiment}
 \titleformat{\chapter}[display]
   {\normalfont\bfseries\Large}
   {\chaptertitlename\ \thechapter}{10pt}{\Huge}
@@ -81,8 +80,8 @@
   breakable,#1
 }
 \newtcolorbox{notebox}[1][]{
-	colback=green!6!white,
-	colframe=green!70!black,
+	colback=brown!6!white,
+	colframe=brown!70!black,
 	fonttitle=\bfseries,
 	title=Note,
 	breakable,#1
@@ -169,7 +168,8 @@
 
 \vfill
 
-\small{Last updated on {\today}}
+\small{Last updated on {\today}}\\
+\emph{Please report any mistakes/omissions to dinesh@gecbh.ac.in}
 %\begin{tabular}{ll}
 %\textbf{Name of Student} & \rule{6cm}{0.4pt} \\[0.4cm]
 %\textbf{Register Number} & \rule{6cm}{0.4pt} \\[0.4cm]
@@ -200,9 +200,28 @@
 % ============================================================
 % EXPERIMENT CHAPTERS WILL BE INSERTED HERE, ONE AT A TIME.
 % ============================================================
-\input{./experiments/prelab1}
-\input{./experiments/prelab2}
-\input{./experiments/clipping_clamping}
-\input{./experiments/zener_regulator}
-\input{./experiments/RC_freq_response}
+\input{./experiments/prelab1} %done
+\input{./experiments/prelab2} %done
+\input{./experiments/clipping_clamping} %done
+\input{./experiments/zener_regulator} %done
+\input{./experiments/RC_freq_response} %done
+\input{./experiments/rc_coupled_amp} %done
+%\input{./experiments/mosfet_amplifier} 
+%\input{./experiments/opamp_int_diff}
+%\input{./experiments/opamp_amplifiers}
+%\input{./experiments/series_voltage_regulator}
+%\input{./experiments/opamp_precision_rectifier}
+%\input{./experiments/astable_555}
+%\input{./experiments/monostable_555}
+%\input{./experiments/opamp_phase_shift_osc}
+%\input{./experiments/opamp_weinbridge_osc}
+%\input{./experiments/opamp_amplifiers}
+%\input{./experiments/opamp_waveform_generators}
+%\input{./experiments/opamp_comparator_schmitt}
+%\input{./experiments/pcb_design}
+%\input{./experiments/instrumentation_amplifiers}
+%\input{./experiments/active_filters}
+%\input{./experiments/emitter_follower}
+%\input{./experiments/jfet_amplifiers}
+%\input{./experiments/opamp_lc_amplifiers}
 \end{document}

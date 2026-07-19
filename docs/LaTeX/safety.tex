@@ -1,18 +1,26 @@
 \chapter*{Safety Guidelines}
 \addcontentsline{toc}{chapter}{Safety Guidelines}
+Safety is paramount in any laboratory environment. Please read and adhere to the following safety guidelines:
 \begin{safetybox}
 	\begin{enumerate}[label=\arabic*.]
-		\item Always verify the power supply voltage and polarity before connecting it to the circuit. Reversed polarity can permanently damage diodes, transistors, op-amps, and ICs.
-		\item Switch off the power supply before making, modifying, or removing any circuit connections.
-		\item Do not exceed the maximum voltage, current, or power ratings of any active or passive component. Always compute and verify current-limiting resistor values before energising a circuit.
-		\item Use current-limiting resistors in series with LEDs, diodes, and Zener diodes during testing to prevent excessive current flow.
-		\item Avoid short-circuiting the output terminals of a regulated DC power supply or the output of an operational amplifier.
-		\item Handle CRO/DSO probes with care; ensure the ground (common) lead of the probe is connected to the circuit ground/common point to avoid ground loops and inaccurate measurements.
-		\item Be aware of the heat-sink and case temperature of power transistors and voltage regulators during prolonged operation; avoid direct contact.
-		\item Electrolytic capacitors are polarised. Verify polarity before connecting; reversed polarity may cause the capacitor to overheat, vent, or rupture.
+		\item \textbf{No Food or Drink:} Do not bring or consume food or drinks in the lab.
+		\item \textbf{Work Area:} Keep your workspace clean and organised. Cluttered benches can lead to accidents.
+		\item \textbf{Before Power On:} Always verify the power supply voltage and polarity before connecting it to the circuit. Reversed polarity can permanently damage diodes, transistors, op-amps, and ICs.
+		\item \textbf{Power Off First:} Switch off the power supply before making, modifying, or removing any circuit connections.
+		\item \textbf{Component Handling:} Handle components carefully. Be aware of the polarity of diodes,
+		LEDs, and electrolytic capacitors. Do not exceed the maximum voltage, current, or power ratings of any active or passive component. Always compute and verify current-limiting resistor values before energising a circuit. Use current-limiting resistors in series with LEDs, diodes, and Zener diodes during testing to prevent excessive current flow. Electrolytic capacitors are polarised. Verify polarity before connecting; reversed polarity may cause the capacitor to overheat, vent, or rupture.
+		\item \textbf{Tool Usage:} Use tools (wire strippers, pliers, screwdrivers) correctly and for their intended
+		purpose.
+		\item \textbf{No Short-circuits:} Avoid short-circuiting the output terminals of a regulated DC power supply or the output of an operational amplifier.
+		\item \textbf{Hot Components:} Be aware of the heat-sink and case temperature of power transistors and voltage regulators during prolonged operation; avoid direct contact.
 		\item Do not work on live circuits with wet hands or in a wet environment.
-		\item In the event of a component overheating, emitting smoke, or unusual odour, immediately switch off the power supply and inform the laboratory instructor before attempting further investigation.
-		\item Familiarise yourself with the location of the mains isolation switch and the fire extinguisher in the laboratory.
+		\item \textbf{Report Accidents:} In the event of a component overheating, emitting smoke, or unusual odour, immediately switch off the power supply and inform the laboratory instructor before attempting further investigation. Immediately report any accidents, spills, or equipment malfunctions to
+		the lab instructor or faculty-in-charge or TA.
+		\item \textbf{No Horseplay:} Maintain a professional demeanour and avoid any behaviour that could
+		endanger yourself or others.
+		\item \textbf{Emergency:} Be aware of the location of emergency exits and first-aid kits. Familiarise yourself with the location of the mains isolation switch and the fire extinguisher in the laboratory.
+		\item \textbf{Before Leaving:} Ensure your workstation is clean and all equipment is turned off before
+		leaving the lab.
 	\end{enumerate}
 \end{safetybox}
 
@@ -22,5 +30,6 @@
 		\item Avoid loose or floating connections, particularly at the input terminals of operational amplifiers, since floating CMOS/op-amp inputs may result in unpredictable circuit behaviour.
 		\item Keep signal leads and connecting wires as short as practicable to minimise stray capacitance and inductance, particularly in high-frequency oscillator circuits.
 		\item Re-verify all connections against the circuit diagram before switching on the power supply, and recheck after every modification.
+		\item Handle CRO/DSO probes with care; ensure the ground (common) lead of the probe is connected to the circuit ground/common point to avoid ground loops and inaccurate measurements.
 	\end{enumerate}
 \end{precautionbox}
