@@ -173,8 +173,9 @@ The circuit diagram to be set up is given in Fig.~\ref{fig:zener-regulator}.
 
 \section{Tabulation}
 
-\paragraph{Line regulation ($I_L$ held at $5\ \text{mA}$).}
-\begin{center}
+\begin{table}[htbp]
+\begin{minipage}{0.5\linewidth}
+	\centering
 	\begin{tabular}{@{}cc@{}}
 		\toprule
 		$V_{in}$ (V) & $V_{out}$ (V) \\
@@ -189,10 +190,11 @@ The circuit diagram to be set up is given in Fig.~\ref{fig:zener-regulator}.
 		15 & \\
 		\bottomrule
 	\end{tabular}
-\end{center}
-
-\paragraph{Load regulation ($V_{in}$ held constant).}
-\begin{center}
+	\caption{Line regulation ($I_L$ held at $5\ \text{mA}$)}
+	\label{tab:lineRegulationObs}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+	\centering
 	\begin{tabular}{@{}cc@{}}
 		\toprule
 		$I_L$ (mA) & $V_{out}$ (V) \\
@@ -205,7 +207,10 @@ The circuit diagram to be set up is given in Fig.~\ref{fig:zener-regulator}.
 		5   & \\
 		\bottomrule
 	\end{tabular}
-\end{center}
+	\caption{Load regulation ($V_{in}$ held constant)}
+	\label{tab:loadRegulationObs}
+\end{minipage}
+\end{table}
 
 \section{Model Graph}
 Plot two graphs from the observations:

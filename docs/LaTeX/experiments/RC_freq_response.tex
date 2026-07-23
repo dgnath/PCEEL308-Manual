@@ -117,36 +117,40 @@ The circuits of the RC low-pass and high-pass filters are shown in Fig.~\ref{fig
 
 \begin{figure}[htbp]
 	\centering
-	\begin{circuitikz}[american, scale=1.05, line width=0.8pt]
-		\draw
-		(0,0) to[sinusoidal voltage source, l=$v_{in}(t)$] (0,3)
-		(0,3) to[R, l=$R$, *-*] (3,3)
-		(3,3) to[C, l=$C$, -*] (3,0)
-		(3,0) to[short] (0,0)
-		;
-		\draw (3,3) node[right]{$v_{out}(t)$};
-		\draw (0,0) node[ground]{};
-	\end{circuitikz}
-	\caption{First-order RC low-pass filter}
-	\label{fig:rc-lpf}
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\begin{circuitikz}[american, scale=1.05, line width=0.8pt]
+			\draw
+			(0,0) to[sinusoidal voltage source, l=$v_{in}(t)$] (0,3)
+			(0,3) to[R, l=$R$, *-*] (3,3)
+			(3,3) to[C, l=$C$, -*] (3,0)
+			(3,0) to[short] (0,0)
+			;
+			\draw (3,3) node[right]{$v_{out}(t)$};
+			\draw (0,0) node[ground]{};
+		\end{circuitikz}
+		\caption{First-order RC low-pass filter}
+		\label{fig:rc-lpf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\begin{circuitikz}[american, scale=1.05, line width=0.8pt]
+			\draw
+			(0,0) to[sinusoidal voltage source, l=$v_{in}(t)$] (0,3)
+			(0,3) to[C, l=$C$, *-*] (3,3)
+			(3,3) to[R, l=$R$, -*] (3,0)
+			(3,0) to[short] (0,0)
+			;
+			\draw (3,3) node[right]{$v_{out}(t)$};
+			\draw (0,0) node[ground]{};
+		\end{circuitikz}
+		\caption{First-order RC high-pass filter}
+		\label{fig:rc-hpf}
+	\end{subfigure}
+	\caption{First order RC filter circuits}
+	\label{fig:firstOrderRCCkts}
 \end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\begin{circuitikz}[american, scale=1.05, line width=0.8pt]
-		\draw
-		(0,0) to[sinusoidal voltage source, l=$v_{in}(t)$] (0,3)
-		(0,3) to[C, l=$C$, *-*] (3,3)
-		(3,3) to[R, l=$R$, -*] (3,0)
-		(3,0) to[short] (0,0)
-		;
-		\draw (3,3) node[right]{$v_{out}(t)$};
-		\draw (0,0) node[ground]{};
-	\end{circuitikz}
-	\caption{First-order RC high-pass filter}
-	\label{fig:rc-hpf}
-\end{figure}
-
 \section{Procedure}
 
 \paragraph{(a) Frequency response (Bode plot).}
@@ -284,7 +288,7 @@ The time-domain behaviour of the RC circuit can be understood by studying the re
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-			width=12cm, height=6cm,
+			width=12cm, height=8cm,
 			axis lines=middle,
 			xlabel={Time},
 			ylabel={Voltage (V)},
@@ -327,7 +331,7 @@ The time-domain behaviour of the RC circuit can be understood by studying the re
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-			width=11cm, height=4.5cm,
+			width=12cm, height=8cm,
 			axis lines=middle,
 			xlabel={$t$}, ylabel={Amplitude},
 			legend style={
@@ -354,7 +358,7 @@ The time-domain behaviour of the RC circuit can be understood by studying the re
 	\caption{High-pass filter response to a square wave (decaying spikes at transitions)}
 	\label{fig:waveform-hpf}
 \end{figure}
-
+\clearpage
 \section{Result}
 First-order RC low-pass and high-pass filters were designed for a cutoff
 frequency of $1\ \text{kHz}$ using $R = 1.5\ \text{k}\Omega$ and

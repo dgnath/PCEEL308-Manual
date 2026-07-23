@@ -248,7 +248,7 @@ Let us design the amplifier for the following typical specifications:
 \begin{enumerate}
 	\item Connect the function generator to the input coupling capacitor $C_{in}$. Connect Channel 1 of the oscilloscope across the input source to monitor $V_{in}$ and Channel 2 across the load resistor $R_L$ to observe $V_{out}$.
 	\item Set the function generator to output a sinusoidal wave at a mid-band frequency of \SI{1}{\kilo\hertz}.
-	\item Adjust the signal generator amplitude so that the input voltage $V_{in}$ is small (e.g., $20\text{ mV}_{p-p}$), ensuring that the output waveform $V_{out}$ remains a clean, unclipped sine wave.
+	\item Adjust the signal generator amplitude so that the input voltage $V_{in}$ is small (e.g., $20\text{ mV}_{p-p}$), ensuring that the output waveform $V_{out}$ remains a clean, unclipped sine wave. If the output appears clipped or distorted, reduce the input signal amplitude further until an undistorted output signal is obtained.
 	\item Maintain this input voltage amplitude ($V_{in}$) perfectly constant throughout the rest of the experiment.
 	\item Vary the frequency of the input signal from \SI{10}{\hertz} up to \SI{1}{\mega\hertz} in logical geometric increments (e.g., \SI{10}{\hertz}, \SI{20}{\hertz}, \SI{50}{\hertz}, \SI{100}{\hertz}, \dots).
 	\item At each frequency step, measure and record the peak-to-peak output voltage $V_{out}$ in Table \ref{tab:freq_response_obs}.
@@ -263,7 +263,7 @@ Let us design the amplifier for the following typical specifications:
 \section{Precautions}
 \begin{itemize}
 	\item \textbf{Input Signal Amplitude Control:} The input voltage must be kept very low (tens of millivolts). Introducing a large input signal will drive the transistor into saturation and cutoff, causing severe clipping distortion in the output waveform and invalidating gain calculations.
-	\item Ensure correct transistor pin identification (Emitter, Base, Collector) before insertion; an incorrectly connected transistor may be damaged or bias incorrectly.
+	\item Ensure correct transistor pin identification (Emitter, Base, Collector) before insertion; an incorrectly connected transistor may get damaged.
 	\item Switch off the DC supply before making or changing any circuit connections.
 	\item While sweeping frequency, allow the output to stabilise before recording each reading, especially near the cutoff frequencies.
 	\item \textbf{Common Grounding:} Ensure that the grounds of the power supply, function generator, and oscilloscope channels are securely connected to a single common ground rail on the breadboard to eliminate noise and ground-loop interference.
