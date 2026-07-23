@@ -43,6 +43,7 @@ Desktop.ini
 *.net
 *.txt.bak
 *.measure
+*.raw
 
 ###############################################################################
 # Simulation Output Folders
