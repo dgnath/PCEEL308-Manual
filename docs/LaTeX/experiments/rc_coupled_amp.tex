@@ -9,7 +9,7 @@
 %   \pgfplotsset{compat=1.17}
 % =============================================================
 
-\chapter{RC-Coupled Amplifier using BJT in CE Configuration}
+\chapter{RC-Coupled CE Amplifier using BJT}
 \label{chap:expt2}
 
 \section{Aim}
@@ -30,7 +30,8 @@ To design, assemble, and test a single-stage RC-coupled amplifier using a BJT in
 \end{enumerate}
 
 \section{Components and Equipment Required}
-\begin{table}[h!]
+Table~\ref{tab:CompsBJTAmp} lists the components/equipment required.
+\begin{table}[htbp!]
 	\centering
 	\begin{tabular}{@{}cll@{}}
 		\toprule
@@ -47,9 +48,10 @@ To design, assemble, and test a single-stage RC-coupled amplifier using a BJT in
 		9  & Breadboard and connecting wires & -- \\
 		\bottomrule
 	\end{tabular}
-	\caption{Components and equipment list.}
+	\caption{Components and equipment list for RC-coupled BJT amplifier}
+	\label{tab:CompsBJTAmp}
 \end{table}
-
+%\clearpage
 \section{Theory}
 A common-emitter (CE) configuration is widely used in voltage amplification due to its high voltage and current gain, along with moderate input and output impedances. In an RC-coupled amplifier, multiple single-stage amplifiers can be cascaded using a coupling capacitor, though this experiment focuses on analyzing a single-stage implementation. The capacitors $C_{in}$ and $C_{out}$ couple the AC signal into and out of the stage while blocking DC, isolating the amplifier's bias point from the source and the load; an emitter bypass capacitor $C_E$ provides an AC ground at the emitter to maximise gain, while a DC bias network ($R_1, R_2, R_E$) fixes a stable quiescent operating point independent of transistor-to-transistor $\beta$ variation.
 
@@ -81,7 +83,7 @@ The performance of the amplifier over a wide frequency spectrum is characterized
 \begin{enumerate}
 	\item \textbf{Low-Frequency Region:} At low frequencies, the capacitive reactances of $C_{in}, C_{out},$ and $C_E$ (given by $X_C = 1 / (2\pi fC)$) become significantly high. These reactances drop a considerable portion of the AC signal, thereby reducing the effective voltage gain.
 	
-	\item \textbf{Mid-Band Region:} In this region (typically \SI{100}{\hertz} to \SI{100}{\kilo\hertz}), t both coupling capacitors behave as AC short circuits and the emitter bypass capacitor provides a low-impedance AC path, so the emitter is at AC ground. Concurrently, the internal parasitic capacitances of the BJT act as open circuits. Consequently, the voltage gain remains constant and reaches its maximum value ($A_{v(mid)}$).
+	\item \textbf{Mid-Band Region:} In this region (typically \SI{100}{\hertz} to \SI{100}{\kilo\hertz}), both the coupling capacitors behave as AC short circuits and the emitter bypass capacitor provides a low-impedance AC path, so the emitter is at AC ground. Concurrently, the internal parasitic capacitances of the BJT act as open circuits. Consequently, the voltage gain remains constant and reaches its maximum value ($A_{v(mid)}$).
 	The small-signal mid-band gain, using the hybrid-$\pi$/$r_e$ model, is
 	\begin{equation}
 		A_{v(mid)} = -\,g_m (R_C \parallel R_L) = -\,\frac{(R_C \parallel R_L)}{r_e}\,, \qquad r_e \approx \frac{V_T}{I_C}\,,
@@ -235,29 +237,29 @@ Let us design the amplifier for the following typical specifications:
 %\end{enumerate}
 
 \section{Procedure}
+The circuit is set up as shown in Figure \ref{fig:ce_amplifier}. First, check the DC bias voltages at various nodes (Base, Collector, Emitter etc., with respect to ground. Record the observations in Table \ref{tab:dc_obs}. For frequency response, an input sinusoidal signal ($V_{in}$) from a function generator with amplitude $20\text{ mV}_{p-p}$  is given to the circuit. Measure the magnitude (peak to peak) of the input by using DSO CH1. Connect the DSO CH2 to the output side and the amplified output is observed. Increase the frequency in steps and observe the magnitude of $V_{out}$. The frequency response is plotted in a semi log sheet.
+%\subsection{DC Operating Point Verification (Static Analysis)}
+%\begin{enumerate}
+%	\item Assemble the circuit on the breadboard as shown in Figure \ref{fig:ce_amplifier} without connecting the signal generator and the load resistor $R_L$.
+%	\item Switch on the Regulated Power Supply and set $V_{CC} = \SI{12}{\volt}$.
+%	\item Using a digital multimeter (DMM), measure the steady-state DC voltages at the base ($V_B$), emitter ($V_E$), and collector ($V_C$) with respect to ground.
+%	\item Calculate the quiescent parameters: $V_{CE} = V_C - V_E$ and $I_C \approx V_E / R_E$. Record these in Table \ref{tab:dc_obs}. Verify that they closely align with the target design parameters.
+%\end{enumerate}
 
-\subsection{DC Operating Point Verification (Static Analysis)}
-\begin{enumerate}
-	\item Assemble the circuit on the breadboard as shown in Figure \ref{fig:ce_amplifier} without connecting the signal generator and the load resistor $R_L$.
-	\item Switch on the Regulated Power Supply and set $V_{CC} = \SI{12}{\volt}$.
-	\item Using a digital multimeter (DMM), measure the steady-state DC voltages at the base ($V_B$), emitter ($V_E$), and collector ($V_C$) with respect to ground.
-	\item Calculate the quiescent parameters: $V_{CE} = V_C - V_E$ and $I_C \approx V_E / R_E$. Record these in Table \ref{tab:dc_obs}. Verify that they closely align with the target design parameters.
-\end{enumerate}
-
-\subsection{AC Analysis and Frequency Response Plotting}
-\begin{enumerate}
-	\item Connect the function generator to the input coupling capacitor $C_{in}$. Connect Channel 1 of the oscilloscope across the input source to monitor $V_{in}$ and Channel 2 across the load resistor $R_L$ to observe $V_{out}$.
-	\item Set the function generator to output a sinusoidal wave at a mid-band frequency of \SI{1}{\kilo\hertz}.
-	\item Adjust the signal generator amplitude so that the input voltage $V_{in}$ is small (e.g., $20\text{ mV}_{p-p}$), ensuring that the output waveform $V_{out}$ remains a clean, unclipped sine wave. If the output appears clipped or distorted, reduce the input signal amplitude further until an undistorted output signal is obtained.
-	\item Maintain this input voltage amplitude ($V_{in}$) perfectly constant throughout the rest of the experiment.
-	\item Vary the frequency of the input signal from \SI{10}{\hertz} up to \SI{1}{\mega\hertz} in logical geometric increments (e.g., \SI{10}{\hertz}, \SI{20}{\hertz}, \SI{50}{\hertz}, \SI{100}{\hertz}, \dots).
-	\item At each frequency step, measure and record the peak-to-peak output voltage $V_{out}$ in Table \ref{tab:freq_response_obs}.
-	\item Calculate the voltage gain $A_v = V_{out} / V_{in}$ and the logarithmic gain in decibels: $A_v \text{ (dB)} = 20\log_{10}(A_v)$.
-	\item Plot a graph of Gain (dB) on the y-axis versus Frequency (Hz) on a logarithmic x-axis\footnote{Use a \emph{Semi-log} graph sheet}.
-	\item Identify the maximum mid-band gain $A_{v(mid)}$ from the flat portion of the graph. Draw a line at a level \SI{3}{\decibel} below the maximum gain ($A_{v(mid)} - 3\text{ dB}$).
-	\item The intersection points of this line with the frequency response curve define the lower cutoff frequency ($f_L$) and upper cutoff frequency ($f_H$). Calculate the bandwidth: $BW = f_H - f_L$.
-	\item Compare the measured $A_{v(mid)}$, $f_L$, $f_H$, and $BW$ with the theoretical/LTspice-simulated values from the Pre-Lab.
-\end{enumerate}
+%\subsection{AC Analysis and Frequency Response Plotting}
+%\begin{enumerate}
+%	\item Connect the function generator to the input coupling capacitor $C_{in}$. Connect Channel 1 of the oscilloscope across the input source to monitor $V_{in}$ and Channel 2 across the load resistor $R_L$ to observe $V_{out}$.
+%	\item Set the function generator to output a sinusoidal wave at a mid-band frequency of \SI{1}{\kilo\hertz}.
+%	\item Adjust the signal generator amplitude so that the input voltage $V_{in}$ is small (e.g., $20\text{ mV}_{p-p}$), ensuring that the output waveform $V_{out}$ remains a clean, unclipped sine wave. If the output appears clipped or distorted, reduce the input signal amplitude further until an undistorted output signal is obtained.
+%	\item Maintain this input voltage amplitude ($V_{in}$) perfectly constant throughout the rest of the experiment.
+%	\item Vary the frequency of the input signal from \SI{10}{\hertz} up to \SI{1}{\mega\hertz} in logical geometric increments (e.g., \SI{10}{\hertz}, \SI{20}{\hertz}, \SI{50}{\hertz}, \SI{100}{\hertz}, \dots).
+%	\item At each frequency step, measure and record the peak-to-peak output voltage $V_{out}$ in Table \ref{tab:freq_response_obs}.
+%	\item Calculate the voltage gain $A_v = V_{out} / V_{in}$ and the logarithmic gain in decibels: $A_v \text{ (dB)} = 20\log_{10}(A_v)$.
+%	\item Plot a graph of Gain (dB) on the y-axis versus Frequency (Hz) on a logarithmic x-axis\footnote{Use a \emph{Semi-log} graph sheet}.
+%	\item Identify the maximum mid-band gain $A_{v(mid)}$ from the flat portion of the graph. Draw a line at a level \SI{3}{\decibel} below the maximum gain ($A_{v(mid)} - 3\text{ dB}$).
+%	\item The intersection points of this line with the frequency response curve define the lower cutoff frequency ($f_L$) and upper cutoff frequency ($f_H$). Calculate the bandwidth: $BW = f_H - f_L$.
+%	\item Compare the measured $A_{v(mid)}$, $f_L$, $f_H$, and $BW$ with the theoretical/LTspice-simulated values from the Pre-Lab.
+%\end{enumerate}
 
 
 \section{Precautions}
@@ -340,15 +342,15 @@ Record the measured static DC parameters in Table \ref{tab:dc_obs} and compare t
 
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{llll}
+	\begin{tabular}{lll}
 		\toprule
-		\textbf{Parameter} & \textbf{Theoretical Value} & \textbf{Measured Value} & \textbf{\% Deviation} \\
+		\textbf{Parameter} & \textbf{Theoretical Value} & \textbf{Measured Value} \\
 		\midrule
-		Base Voltage ($V_B$) & \SI{1.9}{\volt} & & \\
-		Emitter Voltage ($V_E$) & \SI{1.2}{\volt} & & \\
-		Collector Voltage ($V_C$) & \SI{7.2}{\volt} & & \\
-		Collector-Emitter Voltage ($V_{CEQ}$) & \SI{6.0}{\volt} & & \\
-		Collector Current ($I_{CQ}$) & \SI{2.0}{\milli\ampere} & & \\
+		Base Voltage ($V_B$) &  & \\
+		Emitter Voltage ($V_E$) & & \\
+		Collector Voltage ($V_C$) &  & \\
+		Collector-Emitter Voltage ($V_{CEQ}$) & &  \\
+		Collector Current ($I_{CQ}$) &  &  \\
 		\bottomrule
 	\end{tabular}
 	\caption{DC Operating Point Measurements}
@@ -375,26 +377,26 @@ Record the input and output peak-to-peak voltages across the frequency range in 
 	\caption{Frequency response data (add rows as needed to adequately capture the roll-off regions).}
 	\label{tab:freq_response_obs}
 \end{table}
-\subsection{Summary of Observations}
-Summarise the observations in Table~\ref{tab:summary}.
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{@{}lccc@{}}
-		\toprule
-		Quantity & Design (theory) & LTspice (Pre-Lab) & Measured (hardware) \\
-		\midrule
-		$V_B$ (V) &  & -- &  \\
-		$V_E$ (V) &  & -- &  \\
-		$V_{CEQ}$ (V) &  & -- &  \\
-		$A_{v(mid)}(dB)$ &  &  &  \\
-		$f_L$ (Hz) &  &  &  \\
-		$f_H$ (Hz) &  &  &  \\
-		$BW$ (Hz) &  &  &  \\
-		\bottomrule
-	\end{tabular}
-	\caption{Summary: comparison of design, simulation, and hardware measurement.}
-	\label{tab:summary}
-\end{table}
+%\subsection{Summary of Observations}
+%Summarise the observations in Table~\ref{tab:summary}.
+%\begin{table}[h!]
+%	\centering
+%	\begin{tabular}{@{}lccc@{}}
+%		\toprule
+%		Quantity & Design (theory) & LTspice (Pre-Lab) & Measured (hardware) \\
+%		\midrule
+%		$V_B$ (V) &  & -- &  \\
+%		$V_E$ (V) &  & -- &  \\
+%		$V_{CEQ}$ (V) &  & -- &  \\
+%		$A_{v(mid)}(dB)$ &  &  &  \\
+%		$f_L$ (Hz) &  &  &  \\
+%		$f_H$ (Hz) &  &  &  \\
+%		$BW$ (Hz) &  &  &  \\
+%		\bottomrule
+%	\end{tabular}
+%	\caption{Summary: comparison of design, simulation, and hardware measurement.}
+%	\label{tab:summary}
+%\end{table}
 %\clearpage
 \newpage
 \section{Result}

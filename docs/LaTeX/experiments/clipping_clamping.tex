@@ -55,7 +55,7 @@ Figure~\ref{fig:series_clipper} shows a series diode clipper. The diode conducts
 	\centering
 	\begin{circuitikz}[american, scale=0.8, line width = 0.8pt]
 		\draw
-		(0,0) to[sinusoidal voltage source, l=$v_{in}(t)$] (0,3)
+		(0,0) to[sinusoidal voltage source, l=$v_{in}(t)$, *-] (0,3)
 		(0,3) to[short] (1,3)
 		(1,3) to[D, l=$D$, *-*] (3,3)
 		(3,3) to[R, l=$R_L$, *-*] (3,0)
@@ -168,7 +168,7 @@ The time constant $R_L C$ must satisfy $R_L C \gg T$ (the input period) so that 
 		\begin{circuitikz}[american, scale=0.75, line width=0.8pt]
 			\draw
 			(0,0) to[sinusoidal voltage source, l=$v_{in}(t)$] (0,3)
-			(0,3) to[R, l=$R$, *-*] (4,3)
+			(0,3) to[R, name=Res1, l=$R$, *-*] (4,3)
 			(4,3) to[short] (6,3)
 			(4,3) to[D, l=$D$, *-*, mirror] (4,0)
 			(4,0) to[short, *-*] (0,0)
@@ -177,6 +177,7 @@ The time constant $R_L C$ must satisfy $R_L C \gg T$ (the input period) so that 
 			\draw (6,3) to[short, -o] (6.7,3) node[right]{$v_{out}(t)$};
 			\draw (6,0) to[short, -o] (6.7,0) node[right]{};
 			\draw (0,0) node[ground]{};
+			\node[below=0.3cm, align=center] at (Res1.center)  {$1\ k\Omega$};
 		\end{circuitikz}
 		\caption{Shunt positive clipper Circuit}
 		\label{fig:ShuntPosClipperCkt}
@@ -951,7 +952,7 @@ The clipping level is moved to negative, by reversing the bias voltage $V_R$ in 
 \section{Experiment Procedure}
 
 \begin{enumerate}[label=\arabic*.]
-	\item Assemble the shunt positive clipper of Figure~\ref{fig:ShuntPosClipperCkt} on the breadboard. Set the function generator to a sine wave of frequency $1\,\text{kHz}$ and amplitude $10\,\text{V}_{pp}$. 
+	\item Assemble the shunt positive clipper of Figure~\ref{fig:ShuntPosClipperCkt} on the breadboard. Set the function generator to a sine wave of frequency $100\,\text{Hz}$ and amplitude $10\,\text{V}_{pp}$. 
 	\item Connect DSO CH1 to $v_{in}$ and CH2 to $v_{out}$, with a common ground. Display both waveforms simultaneously and sketch/record them.
 	\item Replace the shunt positive clipper with the shunt negative clipper. (Figure~\ref{fig:ShuntNegClipperCkt}). Record $v_{in}$ and $v_{out}$, and measure the clipping level from the DSO screen using the horizontal cursors.
 	\item Repeat for the biased clipper (Figure~\ref{fig:biased_clipper}) for at least two values of $V_R$, and the double clipper (Figure~\ref{fig:double_clipper}). (\emph{Note that the peak of the selected input waveform is to be higher than the clipping level for the case of biased clippers}).

@@ -18,6 +18,8 @@
 \usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{adjustbox}
 \usepackage{array}
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
@@ -31,6 +33,7 @@
 \usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage{import}
+\usepackage{pdfpages}
 % ============================================================
 % PAGE STYLE
 % ============================================================
@@ -146,12 +149,12 @@
 \vspace*{1cm}
 {\Large \textbf{Government Engineering College Barton Hill}}\\[0.2cm]
 {\large DEPARTMENT OF ELECTRICAL AND ELECTRONICS ENGINEERING}\\[1.5cm]
-
 \rule{\linewidth}{0.5mm}\\[0.4cm]
 {\Huge \bfseries Analog Electronics Lab}\\[0.3cm]
 {\Large Laboratory Manual}\\[0.4cm]
 {\large Prepared by: Dr. Dinesh Gopinath}\\[0.3 cm]
-{Version:2.1; July, 2026}
+{\large Checked by: Dr. Frieda Mohan}\\[0.3 cm]
+{Version:2.5; September, 2026}
 \rule{\linewidth}{0.5mm}\\[1.5cm]
 %\author{Dr. Dinesh Gopinath}
 \begin{tabular}{ll}
@@ -162,8 +165,8 @@
 \textbf{CIE Marks} & 50 \\
 \textbf{ESE Marks} & 50 \\
 \textbf{Exam Duration} & 2 Hrs.\ 30 Min. \\
-\textbf{Prerequisites} & Nil \\
-\textbf{Corequisites} & PBEET304\\
+\textbf{Prerequisite} & Nil \\
+\textbf{Corequisite} & PBEET304\\
 \end{tabular}
 
 \vfill
@@ -200,28 +203,60 @@
 % ============================================================
 % EXPERIMENT CHAPTERS WILL BE INSERTED HERE, ONE AT A TIME.
 % ============================================================
-\input{./experiments/prelab1} %done
-\input{./experiments/prelab2} %done
-\input{./experiments/clipping_clamping} %done
-\input{./experiments/zener_regulator} %done
-\input{./experiments/RC_freq_response} %done
-\input{./experiments/rc_coupled_amp} %done
-\input{./experiments/mosfet_amplifier} 
+%\input{./experiments/prelab1} %done
+%\input{./experiments/prelab2} %done
+%\input{./experiments/clipping_clamping} %done
+%\input{./experiments/zener_regulator} %done
+%\input{./experiments/RC_freq_response} %done
+%\input{./experiments/rc_coupled_amp} %done
+%\input{./experiments/mosfet_amplifier}%done 
+%\input{./experiments/opamp_amplifiers} %done
+%\input{./experiments/adder_subtractor}%done
+%\input{./experiments/opamp_RCphase_shift_osc}
+%\input{./experiments/opamp_comparator_schmitt}
+%\input{./experiments/opamp_waveform_generators}
+\input{./experiments/astable_555}
+%\input{./experiments/astable_555-2}
 %\input{./experiments/opamp_int_diff}
-%\input{./experiments/opamp_amplifiers}
 %\input{./experiments/series_voltage_regulator}
 %\input{./experiments/opamp_precision_rectifier}
-%\input{./experiments/astable_555}
 %\input{./experiments/monostable_555}
-%\input{./experiments/opamp_phase_shift_osc}
 %\input{./experiments/opamp_weinbridge_osc}
-%\input{./experiments/opamp_amplifiers}
-%\input{./experiments/opamp_waveform_generators}
-%\input{./experiments/opamp_comparator_schmitt}
 %\input{./experiments/pcb_design}
 %\input{./experiments/instrumentation_amplifiers}
 %\input{./experiments/active_filters}
 %\input{./experiments/emitter_follower}
 %\input{./experiments/jfet_amplifiers}
 %\input{./experiments/opamp_lc_amplifiers}
+
+%========================================
+% APPENDIX
+%========================================
+
+% Datasheets
+\appendix
+\renewcommand{\chaptername}{APPENDIX}
+\chapter{Manufacturer Datasheets}\label{appendixA}
+\includepdf[
+pages=2-4,
+fitpaper=true,
+pagecommand={\thispagestyle{fancy}}
+]{./appendix/BC107.pdf}
+\includepdf[
+pages=1-5,
+fitpaper=true,
+pagecommand={\thispagestyle{fancy}}
+]{./appendix/2N7000-datasheet.pdf}
+
+\includepdf[
+pages=3-5,
+fitpaper=true,
+pagecommand={\thispagestyle{fancy}}
+]{./appendix/lm741.pdf}
+
+\includepdf[
+pages={3,5,8-9},
+fitpaper=true,
+pagecommand={\thispagestyle{fancy}}
+]{./appendix/lm555.pdf}
 \end{document}

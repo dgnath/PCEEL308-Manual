@@ -9,7 +9,7 @@
 % \usepackage{siunitx}         % For standard units (\SI, \kilo\omega, etc.)
 % ============================================================================
 
-\chapter{MOSFET Amplifier in CS Configuration -- Measurement of Gain, Bandwidth, and Plotting of Frequency Response}
+\chapter{MOSFET Amplifier}
 
 \section{Aim}
 To design, set up, and test a single-stage Common Source (CS) MOSFET amplifier using a voltage-divider bias configuration. The specific objectives are:
@@ -23,7 +23,7 @@ To design, set up, and test a single-stage Common Source (CS) MOSFET amplifier u
 \section{Pre-Lab Assignment}
 Before performing the experiment, students must complete the following analytical tasks:
 \begin{enumerate}
-	\item For the circuit specified in the Design section ($V_{DD} = \SI{12}{\volt}$, $R_1 = \SI{1}{\mega\Omega}$, $R_2 = \SI{470}{\kilo\Omega}$, $R_D = \SI{2.2}{\kilo\Omega}$, $R_S = \SI{560}{\Omega}$), calculate the theoretical DC operating point parameters ($V_G$, $V_S$, $I_D$, and $V_{DS}$). Assume the N-channel MOSFET has a threshold voltage $V_{GS(th)} = \SI{2.0}{\volt}$ and conduction parameter $K_n = \SI{2.0}{\milli\ampere\per\volt\squared}$.
+	\item For the circuit specified in the Design section ($V_{DD} = \SI{12}{\volt}$, $R_1 = \SI{1}{\mega\Omega}$, $R_2 = \SI{470}{\kilo\Omega}$, $R_D = \SI{2.7}{\kilo\Omega}$, $R_S = \SI{560}{\Omega}$), calculate the theoretical DC operating point parameters ($V_G$, $V_S$, $I_D$, and $V_{DS}$). Assume the N-channel MOSFET has a threshold voltage $V_{GS(th)} = \SI{2.0}{\volt}$ and conduction parameter $K_n = \SI{2.0}{\milli\ampere\per\volt\squared}$.
 	\item Sketch the small-signal equivalent AC circuit of the Common Source amplifier and derive the expression for the mid-band voltage gain ($A_v$).
 	\item Compare a MOSFET Common Source amplifier with a BJT Common Emitter amplifier in terms of input impedance, output impedance, and voltage gain.
 	\item Explain why the source bypass capacitor ($C_S$) is necessary and how its removal would impact the amplifier's input impedance and voltage gain.
@@ -36,7 +36,7 @@ The components and test instruments required for this experiment are listed in T
 	\centering
 	\caption{Components and Equipment Specifications}
 	\label{tab:components_mosfet}
-	\begin{tabular}{llll}
+	\begin{tabularx}{\textwidth}{lXlll}
 		\toprule
 		\textbf{S. No.} & \textbf{Item Name} & \textbf{Specification / Range} & \textbf{Quantity} \\
 		\midrule
@@ -48,7 +48,7 @@ The components and test instruments required for this experiment are listed in T
 		6 & Digital Storage Oscilloscope (DSO) & Dual channel, \SI{20}{\mega\hertz} or higher & 1 No. \\
 		7 & Breadboard \& Connecting Wires & Standard multi-contact, single-strand wires & As required \\
 		\bottomrule
-	\end{tabular}
+	\end{tabularx}
 \end{table}
 
 \section{Theory}
@@ -85,6 +85,7 @@ The schematic for the single-stage voltage-divider biased CS MOSFET amplifier is
 	\centering
 	\begin{circuitikz}[scale=1.2, line width = 0.85pt, transform shape]
 		% MOSFET node
+		%\ctikzset{tripoles/mos style/no arrows}
 		\draw (3,2) node[nmos] (m1) {2N7000};
 		
 		% Input source and capacitor
@@ -149,49 +150,76 @@ Let us design the amplifier for the following typical experimental parameters:
 		V_{RD} = \frac{V_{DD} - V_S}{2} = \frac{12\text{ V} - 1.2\text{ V}}{2} = \SI{5.4}{\volt}
 	\end{equation}
 	\begin{equation}
-		R_D = \frac{V_{RD}}{I_D} = \frac{5.4\text{ V}}{2\text{ mA}} = \SI{2.7}{\kilo\Omega} \quad (\text{Select standard value: } \SI{2.2}{\kilo\Omega} \text{ for robust bias padding})
+		R_D = \frac{V_{RD}}{I_D} = \frac{5.4\text{ V}}{2\text{ mA}} = \SI{2.7}{\kilo\Omega} \quad (\text{Select standard value: } \SI{2.7}{\kilo\Omega}).
 	\end{equation}
 	
 	\item \textbf{Design of Biasing Network ($R_1$ and $R_2$):}
-	Using the saturation region current equation to find the operational $V_{GS}$:
-	\begin{equation}
-		I_D = K_n (V_{GS} - V_{GS(th)})^2 \implies 2\text{ mA} = 2\text{ mA/V}^2 \cdot (V_{GS} - 2\text{ V})^2
-	\end{equation}
-	\begin{equation}
-		(V_{GS} - 2\text{ V}) = 1 \implies V_{GS} = \SI{3.0}{\volt}
-	\end{equation}
-	Consequently, the required absolute gate voltage $V_G$ relative to ground is:
-	\begin{equation}
-		V_G = V_{GS} + V_S = 3.0\text{ V} + 1.2\text{ V} = \SI{4.2}{\volt}
-	\end{equation}
-	Since $I_G = 0$, select very large mega-ohm scale values for $R_1$ and $R_2$ to uphold high input resistance. Setting $R_1 = \SI{1}{\mega\Omega}$:
-	\begin{equation}
-		V_G = V_{DD} \left( \frac{R_2}{R_1 + R_2} \right) \implies 4.2 = 12 \left( \frac{R_2}{1\text{ M}\Omega + R_2} \right) \implies R_2 \approx \SI{538}{\kilo\Omega}
-	\end{equation}
-	Choose standard laboratory values: $R_1 = \SI{1}{\mega\Omega}$ and $R_2 = \SI{470}{\kilo\Omega}$.
+	
+	The transfer characteristics of 2N7000 gives:
+	\[
+	V_{GS}\approx 2.3-2.7\ V
+	\]
+	for $I_D= 2\ mA$.
+	
+	Take $V_{GS}\approx 2.5\ V$.
+	
+	Required gate voltage 
+	\[
+	V_G=V_S+V_{GS} = 1.2 \ V+2.5\ V = 3.5 \ V
+	\]
+	
+	Choose divider current of approximately $20\mu A$. \footnote{For higher input impedance, a lower divider current may be assumed, which results in higher divider resistance values.}
+	
+	Then, 
+	\[
+	R_1+R_2 = \dfrac{12\ \text{V}}{20\ \mu A} \approx 600\ k\Omega
+	\]
+	\[
+	\dfrac{R_2}{R_1+R_2}= \dfrac{3.5}{12} = 0.292
+	\]
+	$R_2=0.292\times600\  k = 175\ k$; Choose a standard value of $R_2=180\ k\Omega$.
+	
+	Then $R_1=600\ k-180\ k= 420\ k$. Choose a standard value of $R_1=470\ k\Omega$. 
+%	Using the saturation region current equation to find the operational $V_{GS}$:
+%	\begin{equation}
+%		I_D = K_n (V_{GS} - V_{GS(th)})^2 \implies 2\text{ mA} = 2\text{ mA/V}^2 \cdot (V_{GS} - 2\text{ V})^2
+%	\end{equation}
+%	\begin{equation}
+%		(V_{GS} - 2\text{ V}) = 1 \implies V_{GS} = \SI{3.0}{\volt}
+%	\end{equation}
+%	Consequently, the required absolute gate voltage $V_G$ relative to ground is:
+%	\begin{equation}
+%		V_G = V_{GS} + V_S = 3.0\text{ V} + 1.2\text{ V} = \SI{4.2}{\volt}
+%	\end{equation}
+%	Since $I_G = 0$, select very large mega-ohm scale values for $R_1$ and $R_2$ to uphold high input resistance. Setting $R_1 = \SI{1}{\mega\Omega}$:
+%	\begin{equation}
+%		V_G = V_{DD} \left( \frac{R_2}{R_1 + R_2} \right) \implies 4.2 = 12 \left( \frac{R_2}{1\text{ M}\Omega + R_2} \right) \implies R_2 \approx \SI{538}{\kilo\Omega}
+%	\end{equation}
+%	Choose standard laboratory values: $R_1 = \SI{1}{\mega\Omega}$ and $R_2 = \SI{470}{\kilo\Omega}$.
 \end{enumerate}
 
 \section{Procedure}
-\subsection{DC Operating Point Verification (Static Analysis)}
-\begin{enumerate}
-	\item Set up the discrete components on the breadboard based on the schematic in Figure \ref{fig:mosfet_circuit}. Keep the signal source and the load resistor disconnected at this step.
-	\item Power up the bench supply, setting $V_{DD} = \SI{12}{\volt}$.
-	\item Use a digital multimeter to record the static voltages at the Gate ($V_G$), Source ($V_S$), and Drain ($V_D$) nodes relative to ground.
-	\item Compute the operational quiescent parameters: $V_{GS} = V_G - V_S$, $V_{DS} = V_D - V_S$, and $I_D = V_S / R_S$. Record these in Table \ref{tab:dc_obs_mos} and check if the device is correctly biased in its saturation region ($V_{DS} \ge V_{GS} - V_{GS(th)}$).
-\end{enumerate}
+Set up the circuit as shown in the Figure \ref{fig:mosfet_circuit}. Before giving the input ac signal, check the bias voltages. Apply an input sinusoidal signal of 40 mV (peak-to-peak) at 1000 Hz. Observe the output on the DSO. Vary the frequency of the input signal over a range of values (from 50Hz to a few MHz) to obtain the frequency response which is a graph between log f (x-axis) and gain in dB (y-axis) (See Table 	\ref{tab:ac_obs_mos}).
+%\subsection{DC Operating Point Verification (Static Analysis)}
+%\begin{enumerate}
+%	\item Set up the discrete components on the breadboard based on the schematic in Figure \ref{fig:mosfet_circuit}. Keep the signal source and the load resistor disconnected at this step.
+%	\item Power up the bench supply, setting $V_{DD} = \SI{12}{\volt}$.
+%	\item Use a digital multimeter to record the static voltages at the Gate ($V_G$), Source ($V_S$), and Drain ($V_D$) nodes relative to ground.
+%	\item Compute the operational quiescent parameters: $V_{GS} = V_G - V_S$, $V_{DS} = V_D - V_S$, and $I_D = V_S / R_S$. Record these in Table \ref{tab:dc_obs_mos} and check if the device is correctly biased in its saturation region ($V_{DS} \ge V_{GS} - V_{GS(th)}$).
+%\end{enumerate}
 
-\subsection{AC Analysis and Frequency Response Plotting}
-\begin{enumerate}
-	\item Couple the input signal generator to $C_{in}$. Hook up DSO Channel 1 at the input node to keep track of $V_{in}$ and Channel 2 across the terminal load resistor $R_L$ to register $V_{out}$.
-	\item Program the generator to yield a standard sinusoidal trace at an initial benchmark mid-band frequency of \SI{1}{\kilo\hertz}.
-	\item Attenuate the input amplitude ($V_{in}$) to a modest level (e.g., $50\text{ mV}_{p-p}$). Monitor Channel 2 to ensure the output waveform is highly symmetric and free from clipping or cross-over distortion.
-	\item Carefully lock and maintain this input voltage level $V_{in}$ constant throughout the remaining frequency sweep steps.
-	\item Step the frequency progressively from \SI{10}{\hertz} out to \SI{1}{\mega\hertz} using uniform logarithmic increments.
-	\item Log the peak-to-peak voltage value for $V_{out}$ in Table \ref{tab:ac_obs_mos} at each specified frequency tier.
-	\item Evaluate the numeric voltage gain $A_v = V_{out} / V_{in}$ and compute the proportional decibel scaling: $A_v \text{ (dB)} = 20\log_{10}(A_v)$.
-	\item Graph the logged results using a semi-logarithmic grid, assigning Gain (dB) to the linear y-axis and Frequency (Hz) to the logarithmic x-axis.
-	\item Locate the peak plateau ($A_{v(mid)}$). Drop a horizontal coordinate line exactly \SI{3}{\decibel} below this ceiling. The intersection points will resolve the lower cutoff frequency ($f_L$) and upper cutoff frequency ($f_H$). Find the total bandwidth using $BW = f_H - f_L$.
-\end{enumerate}
+%\subsection{AC Analysis and Frequency Response Plotting}
+%\begin{enumerate}
+%	\item Couple the input signal generator to $C_{in}$. Hook up DSO Channel 1 at the input node to keep track of $V_{in}$ and Channel 2 across the terminal load resistor $R_L$ to register $V_{out}$.
+%	\item Program the generator to yield a standard sinusoidal trace at an initial benchmark mid-band frequency of \SI{1}{\kilo\hertz}.
+%	\item Attenuate the input amplitude ($V_{in}$) to a modest level (e.g., $50\text{ mV}_{p-p}$). Monitor Channel 2 to ensure the output waveform is highly symmetric and free from clipping or cross-over distortion.
+%	\item Carefully lock and maintain this input voltage level $V_{in}$ constant throughout the remaining frequency sweep steps.
+%	\item Step the frequency progressively from \SI{10}{\hertz} out to \SI{1}{\mega\hertz} using uniform logarithmic increments.
+%	\item Log the peak-to-peak voltage value for $V_{out}$ in Table \ref{tab:ac_obs_mos} at each specified frequency tier.
+%	\item Evaluate the numeric voltage gain $A_v = V_{out} / V_{in}$ and compute the proportional decibel scaling: $A_v \text{ (dB)} = 20\log_{10}(A_v)$.
+%	\item Graph the logged results using a semi-logarithmic grid, assigning Gain (dB) to the linear y-axis and Frequency (Hz) to the logarithmic x-axis.
+%	\item Locate the peak plateau ($A_{v(mid)}$). Drop a horizontal coordinate line exactly \SI{3}{\decibel} below this ceiling. The intersection points will resolve the lower cutoff frequency ($f_L$) and upper cutoff frequency ($f_H$). Find the total bandwidth using $BW = f_H - f_L$.
+%\end{enumerate}
 
 \section{Precautions}
 \begin{enumerate}
@@ -251,18 +279,18 @@ Compare the static baseline target parameters against actual laboratory multimet
 	\centering
 	\caption{DC Biasing Values}
 	\label{tab:dc_obs_mos}
-	\begin{tabular}{llll}
+	\begin{tabularx}{\textwidth}{lXll}
 		\toprule
-		\textbf{Parameter} & \textbf{Theoretical Value} & \textbf{Practical Value (Measured)} & \textbf{\% Deviation} \\
+		\textbf{Parameter} & \textbf{Theoretical Value} & \textbf{Practical Value (Measured)} & \\
 		\midrule
-		Gate Voltage ($V_G$) & \SI{3.83}{\volt} & & \\
-		Source Voltage ($V_S$) & \SI{1.12}{\volt} & & \\
-		Drain Voltage ($V_D$) & \SI{7.60}{\volt} & & \\
-		Gate-Source Voltage ($V_{GS}$) & \SI{2.71}{\volt} & & \\
-		Drain-Source Voltage ($V_{DS}$) & \SI{6.48}{\volt} & & \\
-		Drain Current ($I_D$) & \SI{2.0}{\milli\ampere} & & \\
+		Gate Voltage ($V_G$) &  &  \\
+		Source Voltage ($V_S$) &  &  \\
+		Drain Voltage ($V_D$) &  &  \\
+		Gate-Source Voltage ($V_{GS}$) &  &  \\
+		Drain-Source Voltage ($V_{DS}$) &  &  \\
+		Drain Current ($I_D$) &  &  \\
 		\bottomrule
-	\end{tabular}
+	\end{tabularx}
 \end{table}
 
 \subsection{AC Frequency Response Data}
@@ -270,30 +298,21 @@ Log the raw output amplitudes across the sweep spectrum in Table \ref{tab:ac_obs
 
 \begin{table}[h!]
 	\centering
-	\caption{AC Frequency Sweep Measurements}
-	\label{tab:ac_obs_mos}
-	\begin{tabular}{cccccc}
+	\begin{tabular}{@{}cccccc@{}}
 		\toprule
-		\textbf{S. No.} & \textbf{Frequency (Hz)} & \textbf{Input $V_{in}$ (V)} & \textbf{Output $V_{out}$ (V)} & \textbf{Gain $A_v = \frac{V_{out}}{V_{in}}$} & \textbf{Gain in dB $= 20\log_{10}(A_v)$} \\
+		S. No. & Freq. $f$ (Hz) & $V_{in,pp}$ (V) & $V_{out,pp}$ (V) & $A_v = V_{out,pp}/V_{in,pp}$ & $A_v = 20\log_{10}(A_v)$ (dB) \\
 		\midrule
-		1 & 10 & & & & \\
-		2 & 20 & & & & \\
-		3 & 50 & & & & \\
-		4 & 100 & & & & \\
-		5 & 200 & & & & \\
-		6 & 500 & & & & \\
-		7 & 1k & & & & \\
-		8 & 2k & & & & \\
-		9 & 5k & & & & \\
-		10 & 10k & & & & \\
-		11 & 20k & & & & \\
-		12 & 50k & & & & \\
-		13 & 100k & & & & \\
-		14 & 200k & & & & \\
-		15 & 500k & & & & \\
-		16 & 1M & & & & \\
+		1& 10	&  &  &  &  \\
+		2& 20	&  &  &  &  \\
+		$\vdots$ & $\vdots$	&  &  &  &  \\
+		$\vdots$&$\vdots$	&  &  &  &  \\
+		$\vdots$&$\vdots$	&  &  &  &  \\
+		& 500k	&  &  &  &  \\
+		& 1M	&  &  &  &  \\
 		\bottomrule
 	\end{tabular}
+	\caption{AC Frequency Sweep Measurements}
+	\label{tab:ac_obs_mos}
 \end{table}
 
 \section{Result}
